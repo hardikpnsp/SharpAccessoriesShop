@@ -14,5 +14,10 @@ namespace Assets.InteractableObjects
         {
             Debug.Log("Player Exit Interact zone");
         }
+
+        public void Print_Interact()
+        {
+            Debug.Log("Player Interact");
+        }
     }
 }

@@ -12,17 +12,19 @@ namespace Assets.InteractableObjects
 
         private bool playerInRange;
 
+        PlayerInteractionController interactionController;
+
         private void Start()
         {
-            SubscribeToPlayerEvents();
+
+            interactionController = PlayerInteractionController.Instance;
+
+            if(interactionController == null)
+            {
+                Debug.LogError("Interaction controller is not set");
+            }
         }
 
-
-
-        private void SubscribeToPlayerEvents()
-        {
-            
-        }
 
         private void OnPlayerInteract()
         {
@@ -34,13 +36,15 @@ namespace Assets.InteractableObjects
 
         private bool IsPlayer(GameObject gameObject)
         {
-            return gameObject.CompareTag("Player");
+            return interactionController.gameObject == gameObject;
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (IsPlayer(collision.gameObject))
             {
+                interactionController.OnTryInteract.AddListener(OnPlayerInteract);
+
                 playerInRange = true;
                 PlayerEnterZone.Invoke();
             }
@@ -49,8 +53,9 @@ namespace Assets.InteractableObjects
 
         private void OnTriggerExit2D(Collider2D collision)
         {
-            if (collision.gameObject.CompareTag("Player"))
+            if (IsPlayer(collision.gameObject))
             {
+                interactionController.OnTryInteract.RemoveListener(OnPlayerInteract);
                 playerInRange = false;
                 PlayerExitZone.Invoke();
             }
