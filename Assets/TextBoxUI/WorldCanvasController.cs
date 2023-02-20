@@ -29,14 +29,14 @@ public class WorldCanvasController : MonoBehaviour
         }
     }
 
-    public void InstantiateToWorldCanvas(GameObject gameObject, Vector3 position, Quaternion rotation)
+    public GameObject InstantiateToWorldCanvas(GameObject gameObject, Vector3 position, Quaternion rotation)
     {
-        Instantiate(gameObject, position, rotation, worldCanvas.transform);
+        return Instantiate(gameObject, position, rotation, worldCanvas.transform);
     }
 
-    public void InstantiateToWorldCanvas(GameObject gameObject, Vector3 position)
+    public GameObject InstantiateToWorldCanvas(GameObject gameObject, Vector3 position)
     {
-        Instantiate(gameObject, position, Quaternion.Euler(0,0,0), worldCanvas.transform);
+        return Instantiate(gameObject, position, Quaternion.Euler(0,0,0), worldCanvas.transform);
     }
 
 }
