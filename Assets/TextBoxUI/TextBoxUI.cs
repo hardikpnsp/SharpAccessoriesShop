@@ -40,6 +40,11 @@ public class TextBoxUI : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        
+    }
+
     public void SetUp()
     {
         StartCoroutine(Text_Co());
@@ -68,6 +73,12 @@ public class TextBoxUI : MonoBehaviour
     {
         animator.SetBool("FadeOut", true);
         Destroy(this.gameObject, destroyDelay);
+    }
+
+    public void Delete()
+    {
+
+        Destroy(this.gameObject);
     }
 
     private IEnumerator Text_Co()
