@@ -24,13 +24,6 @@ public class Movement : MonoBehaviour
     [SerializeField]
     public float speed = 2.0f;
 
-    [SerializeField]
-    private RuntimeAnimatorController IdleAnimationController;    
-    
-    [SerializeField]
-    private RuntimeAnimatorController MovingAnimationController;
-
-
     private Rigidbody2D Rigidbody2D;
     private SpriteRenderer SpriteRenderer;
     private Animator Animator;
@@ -64,10 +57,10 @@ public class Movement : MonoBehaviour
     {
         if (movementState == MovementState.Idle)
         {
-            Animator.runtimeAnimatorController = IdleAnimationController;
+            Animator.SetBool("Moving", false);
         } else if (movementState == MovementState.Moving)
         {
-            Animator.runtimeAnimatorController = MovingAnimationController;
+            Animator.SetBool("Moving", true);
         }
     }
 
