@@ -2,13 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
+
+
 
 public class CustomerMovement : MonoBehaviour
 {
-    public Transform goal;
+    public UnityEvent OnDestinatonReached;
+
     private NavMeshAgent agent;
     private SpriteRenderer SpriteRenderer;
     private Animator Animator;
+
+    private MovementState customerMovementState = MovementState.Idle;
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -23,22 +29,17 @@ public class CustomerMovement : MonoBehaviour
     {
         checkDirectionAndFlip();
         checkMovement();
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Move(goal);
-        }
     }
 
-    private void checkMovement()
-    {
-        if (agent.velocity.magnitude > 0)
-        {
-            Animator.SetBool("Moving", true);
-        }
-        else
+    private void checkMovement() {
+        // Have to do an exhaustive check because NavMeshAgent doesn't have a callback when destination is reached 
+        if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance && agent.velocity.sqrMagnitude == 0 && customerMovementState == MovementState.Moving)
         {
             Animator.SetBool("Moving", false);
+            customerMovementState = MovementState.Idle;
+
+            // Callback
+            OnDestinatonReached.Invoke();
         }
     }
 
@@ -56,6 +57,9 @@ public class CustomerMovement : MonoBehaviour
 
     public void Move(Transform goal)
     {
+        customerMovementState = MovementState.Moving;
+        Animator.SetBool("Moving", true);
+
         agent.destination = goal.position;
     }
 }
