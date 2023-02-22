@@ -1,3 +1,4 @@
+using Assets.LevelMapObjects;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,39 +10,30 @@ public class GoodCustomer : Customer
 
     private const float MinQueueWaitingTime = 0.1f;
 
-    private float _joiningQueueTime;
-    private Coroutine _queueCoroutine;
-
     public event Action Served;
     public event Action WaitingTimeExpired;
 
-    public bool CanJoinQueue {  get; private set; }
+    public bool CanJoinQueue => QueueController.CanJoinQueue();
 
     public void JoinQueue()
     {
-        _joiningQueueTime = Time.time;
-        _queueCoroutine = StartCoroutine(WaitInQueue(_queueWaitingTime));
+        QueueController.JoinQueue(this);
+        QueueController.Instance.CustomerServed.AddListener(OnServed);
     }
 
-    public Transform ChooseStall()
+    public Transform ChooseStand()
     {
-        return transform;
+        WeaponStand stand = LevelMapController.GetRandomWeaponStand();
+        bool standFound = stand.TryTakeRandomPosition(out Transform position);
+        return standFound ? position : null;
     }
 
-    public void BeServed()
+    private void OnServed(Customer customer)
     {
-        if (_queueCoroutine == null)
+        if (customer != this)
             return;
 
-        StopCoroutine(_queueCoroutine);
+        QueueController.Instance.CustomerServed.RemoveListener(OnServed);
         Served?.Invoke();
-    }
-
-    private IEnumerator WaitInQueue(float waitingTime)
-    {
-        while (_joiningQueueTime + waitingTime > Time.time)
-            yield return null;
-
-        WaitingTimeExpired?.Invoke();
     }
 }

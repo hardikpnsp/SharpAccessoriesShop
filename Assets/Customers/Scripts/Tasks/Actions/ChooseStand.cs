@@ -4,7 +4,7 @@ using ParadoxNotion.Design;
 
 namespace CustomersActions
 {
-    public class ChooseStall : ActionTask<GoodCustomer>
+    public class ChooseStand : ActionTask<GoodCustomer>
     {
         [RequiredField] public BBParameter<Transform> Target;
 
@@ -15,7 +15,7 @@ namespace CustomersActions
 
         protected override void OnExecute()
         {
-            Transform target = agent.ChooseStall();
+            Transform target = agent.ChooseStand();
             Target.value = target;
             EndAction(target != null);
         }

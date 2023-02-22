@@ -8,8 +8,7 @@ public class CustomersSpawnPoint : MonoBehaviour
 {
     [SerializeField, Min(MinSpawnDelay)] private float _spawnDelay;
     [SerializeField, Min(1)] private int _customersCount;
-    [SerializeField] private CustomerRolesDistribution _customerRolesDistribution;
-    [SerializeField] private QueueController _queueController;
+    [SerializeField] private CustomersDistribution _customerRolesDistribution;
 
     private const float MinSpawnDelay = 1f;
 
@@ -21,7 +20,7 @@ public class CustomersSpawnPoint : MonoBehaviour
     private IEnumerator SpawnCustomers(float delay, int customersCount)
     {
         WaitForSeconds waitForSeconds = new WaitForSeconds(delay);
-        Stack<CustomerRole> customerStack = _customerRolesDistribution.GenerateDistribution(customersCount);
+        Stack<Customer> customerStack = _customerRolesDistribution.GenerateDistribution(customersCount);
 
         while (customerStack.Count > 0)
         {
@@ -30,12 +29,12 @@ public class CustomersSpawnPoint : MonoBehaviour
         }
     }
     
-    private Customer SpawnCustomer(CustomerRole customerRole)
+    private Customer SpawnCustomer(Customer customerPrefab)
     {
-        if (customerRole == null)
-            throw new NullReferenceException("You must set a reference to a CustomerRole instance.");
+        if (customerPrefab == null)
+            throw new NullReferenceException("You must set reference to a Customer prefab.");
 
-        Customer customer = Instantiate(customerRole.Prefab, transform);
+        Customer customer = Instantiate(customerPrefab, transform);
         customer.Spawn(transform);
         return customer;
     }

@@ -4,9 +4,9 @@ using UnityEngine;
 using System.Linq;
 using System;
 
-public class CustomerRolesDistribution : MonoBehaviour
+public class CustomersDistribution : MonoBehaviour
 {
-    [SerializeField] private List<CustomerRolesDistributionItem> _items;
+    [SerializeField] private List<CustomersDistributionItem> _items;
 
     private void OnValidate()
     {
@@ -15,23 +15,23 @@ public class CustomerRolesDistribution : MonoBehaviour
 
         if (sum != sumLimit && sum != 0)
         {
-            foreach (CustomerRolesDistributionItem item in _items)
+            foreach (CustomersDistributionItem item in _items)
             {
                 item.SetProbability(item.Probability / sum);
             }
         }
     }
     
-    public Stack<CustomerRole> GenerateDistribution(int count)
+    public Stack<Customer> GenerateDistribution(int count)
     {
         if (count <= 0)
             throw new ArgumentException("You cannot generate distribution with non-positive amount of entries.");
 
         int itemCount;
 
-        List<CustomerRole> roles = new List<CustomerRole>();
+        List<Customer> roles = new List<Customer>();
 
-        foreach(CustomerRolesDistributionItem item in _items)
+        foreach(CustomersDistributionItem item in _items)
         {
             itemCount = Mathf.CeilToInt(count * item.Probability);
 
@@ -39,17 +39,17 @@ public class CustomerRolesDistribution : MonoBehaviour
                 roles.Add(item.Value);
         }
 
-        return new Stack<CustomerRole>(Utils.Shuffle(roles).Take(count));
+        return new Stack<Customer>(Utils.Shuffle(roles).Take(count));
     }
 
     [Serializable]
-    private class CustomerRolesDistributionItem
+    private class CustomersDistributionItem
     {
-        [SerializeField] private CustomerRole _value;
+        [SerializeField] private Customer _value;
         [SerializeField, Range(0, 100)] private int _probabilityPercentage;
 
         public float Probability => _probabilityPercentage / 100.0f;
-        public CustomerRole Value => _value;
+        public Customer Value => _value;
 
         public void SetProbability(float probability)
         {
