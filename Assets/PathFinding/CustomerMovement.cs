@@ -4,11 +4,10 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
 
-
-
 public class CustomerMovement : MonoBehaviour
 {
     public UnityEvent OnDestinatonReached;
+    public UnityAction DestinationReached;
 
     private NavMeshAgent agent;
     private SpriteRenderer SpriteRenderer;
@@ -40,6 +39,7 @@ public class CustomerMovement : MonoBehaviour
 
             // Callback
             OnDestinatonReached.Invoke();
+            DestinationReached?.Invoke();
         }
     }
 
