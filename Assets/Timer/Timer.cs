@@ -40,6 +40,8 @@ public class Timer : MonoBehaviour
 
     public void SetUpAndStart(float time, UnityAction onTimerEnd)
     {
+        ResetTimer();
+
         startValue = time;
         secondsLeft = time;
 
