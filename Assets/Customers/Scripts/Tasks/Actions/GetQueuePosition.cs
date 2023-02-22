@@ -1,11 +1,12 @@
 using NodeCanvas.Framework;
 using ParadoxNotion.Design;
+using UnityEngine;
 
-namespace CustomersActions
+namespace NodeCanvas.Tasks.Actions
 {
-    public class Leave : ActionTask<Customer>
+    public class SetQueuePosition : ActionTask<GoodCustomer>
     {
-        [RequiredField] public BBParameter<bool> Happy;
+        public BBParameter<Transform> QueuePosition;
 
         protected override string OnInit()
         {
@@ -14,7 +15,7 @@ namespace CustomersActions
 
         protected override void OnExecute()
         {
-            agent.Leave(Happy.value);
+            QueuePosition.value = agent.GetQueuePosition();
             EndAction(true);
         }
     }

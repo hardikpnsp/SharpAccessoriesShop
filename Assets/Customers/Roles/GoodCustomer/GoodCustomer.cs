@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class GoodCustomer : Customer
 {
+    [SerializeField] PatienceController _patienceController;
     [SerializeField, Min(MinQueueWaitingTime)] private float _queueWaitingTime;
 
     private const float MinQueueWaitingTime = 0.1f;
@@ -15,17 +16,32 @@ public class GoodCustomer : Customer
 
     public bool CanJoinQueue => QueueController.CanJoinQueue();
 
+    public Transform GetQueuePosition()
+    {
+        return QueueController.GetStartPosition();
+    }
+
     public void JoinQueue()
     {
-        QueueController.JoinQueue(this);
-        QueueController.Instance.CustomerServed.AddListener(OnServed);
+        Join();
+        _patienceController.StartTimer(_queueWaitingTime);
     }
 
     public Transform ChooseStand()
     {
         WeaponStand stand = LevelMapController.GetRandomWeaponStand();
-        bool standFound = stand.TryTakeRandomPosition(out Transform position);
-        return standFound ? position : null;
+
+        if (stand == null)
+            return null;
+
+        bool positionFound = stand.TryTakeRandomPosition(out Transform position);
+        return positionFound ? position : null;
+    }
+
+    private void OnWaitingTimeEnded()
+    {
+        Exit();
+        WaitingTimeExpired?.Invoke();
     }
 
     private void OnServed(Customer customer)
@@ -33,7 +49,22 @@ public class GoodCustomer : Customer
         if (customer != this)
             return;
 
-        QueueController.Instance.CustomerServed.RemoveListener(OnServed);
+        _patienceController.StopTimer();
+        Exit();
         Served?.Invoke();
+    }
+
+    private void Join()
+    {
+        QueueController.JoinQueue(this);
+        QueueController.Instance.CustomerServed.AddListener(OnServed);
+        _patienceController.PatienceTimerEnded.AddListener(OnWaitingTimeEnded);
+    }
+
+    private void Exit()
+    {
+        QueueController.ExitQueue(this);
+        QueueController.Instance.CustomerServed.RemoveListener(OnServed);
+        _patienceController.PatienceTimerEnded.RemoveListener(OnWaitingTimeEnded);
     }
 }

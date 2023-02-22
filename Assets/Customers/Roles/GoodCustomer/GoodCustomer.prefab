@@ -43,6 +43,10 @@ PrefabInstance:
       propertyPath: _serializedVariables.Array.data[1]._references.Array.data[1]
       value: 
       objectReference: {fileID: 2473239067790111221}
+    - target: {fileID: -2759574181778828148, guid: baec7c2da6cf45346a349ec1940aa4fa, type: 3}
+      propertyPath: _graph
+      value: 
+      objectReference: {fileID: 11400000, guid: b0c53df8527667546ba92a4adacf8699, type: 2}
     - target: {fileID: 6247046330794357277, guid: baec7c2da6cf45346a349ec1940aa4fa, type: 3}
       propertyPath: m_Name
       value: GoodCustomer
@@ -110,9 +114,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 054666021fc7e4e468e82cd1aa17309a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _queueWaitingTime: 10
+  _patienceController: {fileID: 8436141658355016960}
+  _queueWaitingTime: 1
 --- !u!4 &2473239067790111221 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7009095894247873874, guid: baec7c2da6cf45346a349ec1940aa4fa, type: 3}
   m_PrefabInstance: {fileID: 4834607879626714279}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4636135690567914656 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 234511092221212679, guid: baec7c2da6cf45346a349ec1940aa4fa, type: 3}
+  m_PrefabInstance: {fileID: 4834607879626714279}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8436141658355016960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4636135690567914656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6958c5b84352c55408766c18c0176bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PatienceTimerStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  PatienceTimerEnded:
+    m_PersistentCalls:
+      m_Calls: []
