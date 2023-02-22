@@ -47,7 +47,6 @@ public class BuyingItemsInteraction : Interaction
 
     protected override void OnPlayerExitZone()
     {
-        if (!QueueController.Empty)
             interactTextBoxSpawner.RemoveTextBox();
     }
 
