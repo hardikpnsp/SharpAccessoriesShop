@@ -7,10 +7,8 @@ using ParadoxNotion.Serialization;
 using ParadoxNotion.Serialization.FullSerializer;
 using UnityEngine;
 
-
 namespace NodeCanvas.Tasks.Conditions
 {
-
     ///----------------------------------------------------------------------------------------------
     //previous versions
     class CheckCSharpEvent_0

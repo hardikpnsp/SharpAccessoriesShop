@@ -9,6 +9,7 @@ public class CustomersSpawnPoint : MonoBehaviour
     [SerializeField, Min(MinSpawnDelay)] private float _spawnDelay;
     [SerializeField, Min(1)] private int _customersCount;
     [SerializeField] private CustomerRolesDistribution _customerRolesDistribution;
+    [SerializeField] private QueueController _queueController;
 
     private const float MinSpawnDelay = 1f;
 
@@ -35,7 +36,7 @@ public class CustomersSpawnPoint : MonoBehaviour
             throw new NullReferenceException("You must set a reference to a CustomerRole instance.");
 
         Customer customer = Instantiate(customerRole.Prefab, transform);
-        customer.Spawn(transform.position);
+        customer.Spawn(transform);
         return customer;
     }
 }

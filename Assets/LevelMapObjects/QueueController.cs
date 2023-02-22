@@ -29,7 +29,6 @@ public class QueueController : MonoBehaviour
     {
         customers.Add(customer);
         TimerController.CreateTimer(5f, Service_Temp);
-        
     }
 
     private void Service_Temp()
