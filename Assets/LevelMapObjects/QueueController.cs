@@ -5,30 +5,58 @@ using UnityEngine.Events;
 
 public class QueueController : MonoBehaviour
 {
+    public static QueueController Instance { get; private set; }
+
     [SerializeField]
     private TimerController TimerController;
 
+    [SerializeField]
     private List<Customer> customers = new List<Customer>();
 
     public CustomerServedEvent CustomerServed;
 
     [SerializeField]
+    private bool Debug_ImmidiatlyServCustomer;
+
+    [SerializeField]
     private Transform startPos;
 
-    public Transform GetStartPosition()
+    private void Awake()
     {
-        return startPos;
+        if(Instance == null)
+        {
+            Instance = this;
+        }
     }
 
-    public bool CanJoinQueue()
+    public static Transform GetStartPosition()
     {
-        return true;
+        if(Instance != null)
+            return Instance.startPos;
+        else
+            return null;
     }
 
-    public void JoinQueue(Customer customer)
+    public static bool CanJoinQueue()
     {
-        customers.Add(customer);
-        TimerController.CreateTimer(5f, Service_Temp);
+        if (Instance != null)
+            return true;
+        else
+            return false;
+    }
+
+    public static void JoinQueue(Customer customer)
+    {
+        if(Instance == null)
+        {
+            throw new System.Exception("QueueController Instance is null");
+        }
+
+        Instance.customers.Add(customer);
+
+        if(Instance.Debug_ImmidiatlyServCustomer)
+        Instance.Service_Temp();
+        
     }
 
     private void Service_Temp()
@@ -47,11 +75,23 @@ public class QueueController : MonoBehaviour
         
     }
 
-    public void ExitQueue(Customer customer)
+    public static void ExitQueue(Customer customer)
     {
-        customers.Remove(customer);
+        if (Instance == null)
+        {
+            throw new System.Exception("QueueController Instance is null");
+        }
+
+        Instance.customers.Remove(customer);
     }
 
+    private void OnDestroy()
+    {
+        if(Instance == this)
+        {
+            Instance = null;
+        }
+    }
 
     [System.Serializable]
     public class CustomerServedEvent : UnityEvent<Customer>
