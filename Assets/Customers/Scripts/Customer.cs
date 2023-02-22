@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using NodeCanvas.BehaviourTrees;
 using System;
-
+    
 [RequireComponent(typeof(BehaviourTreeOwner))]
 [RequireComponent(typeof(CustomerMovement))]
 public class Customer : MonoBehaviour
@@ -14,6 +14,7 @@ public class Customer : MonoBehaviour
     private Transform _destination;
 
     public event Action ReachedDestination;
+    public event Action<Customer, bool> Left;
 
     private void Awake()
     {
@@ -38,6 +39,7 @@ public class Customer : MonoBehaviour
 
     public void Leave(bool happy)
     {
+        Left?.Invoke(this, happy);
         MoveTowards(_spawnPoint);
     }
 

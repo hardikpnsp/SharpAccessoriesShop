@@ -267,7 +267,7 @@ MonoBehaviour:
   CustomerServed:
     m_PersistentCalls:
       m_Calls: []
-  Debug_ImmidiatlyServCustomer: 1
+  Debug_ImmidiatlyServCustomer: 0
   startPos: {fileID: 513503129}
 --- !u!1 &442881183
 GameObject:

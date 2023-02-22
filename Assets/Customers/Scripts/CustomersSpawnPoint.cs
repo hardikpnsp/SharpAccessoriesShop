@@ -12,6 +12,8 @@ public class CustomersSpawnPoint : MonoBehaviour
 
     private const float MinSpawnDelay = 1f;
 
+    public event Action<Customer> SpawnedCustomer;
+
     private void Start()
     {
         StartCoroutine(SpawnCustomers(_spawnDelay, _customersCount));
@@ -36,6 +38,7 @@ public class CustomersSpawnPoint : MonoBehaviour
 
         Customer customer = Instantiate(customerPrefab, transform);
         customer.Spawn(transform);
+        SpawnedCustomer?.Invoke(customer);
         return customer;
     }
 }
