@@ -26,6 +26,28 @@ public class LevelMapController : MonoBehaviour
         }
     }
 
+    public static bool CanGetWeaponStand()
+    {
+        return Instance != null && Instance.weaponStands.Count > 0;
+    }
+
+    public static WeaponStand GetRandomWeaponStand()
+    {
+        if(Instance == null)
+        {
+            return null;
+        }
+
+        if (Instance.weaponStands.Count > 0)
+        {
+            return Instance.weaponStands[Random.Range(0, Instance.weaponStands.Count)];
+        }
+        else
+        {
+            return null;
+        }
+    }
+
     private void Awake()
     {
         foreach (WeaponStand weaponStand in weaponStands)
