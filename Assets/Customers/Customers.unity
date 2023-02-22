@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnDelay: 1.5
-  _customersCount: 20
+  _customersCount: 1
   _customerRolesDistribution: {fileID: 146101756}
 --- !u!4 &146101755
 Transform:

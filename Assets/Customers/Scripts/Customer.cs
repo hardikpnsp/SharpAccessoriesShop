@@ -11,6 +11,7 @@ public class Customer : MonoBehaviour
     private BehaviourTreeOwner _btOwner;
     private CustomerMovement _movement;
     private Transform _spawnPoint;
+    private Transform _destination;
 
     public event Action ReachedDestination;
 
@@ -28,9 +29,10 @@ public class Customer : MonoBehaviour
         _btOwner.StartBehaviour();
     }
 
-    public void MoveTowards(Transform target)
+    public void MoveTowards(Transform destination)
     {
-        _movement.Move(target);
+        _destination = destination;
+        _movement.Move(destination);
         _movement.DestinationReached += OnDestinationReached;
     }
 
@@ -41,11 +43,16 @@ public class Customer : MonoBehaviour
 
     public void Despawn()
     {
+        Destroy(gameObject);
     }
 
     private void OnDestinationReached() 
     {
         _movement.DestinationReached -= OnDestinationReached;
+
+        if (_destination == _spawnPoint)
+            Despawn();
+
         ReachedDestination?.Invoke();
     }
 }

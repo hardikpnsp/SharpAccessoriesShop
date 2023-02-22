@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _patienceController: {fileID: 8436141658355016960}
-  _queueWaitingTime: 1
+  _queueWaitingTime: 10
 --- !u!4 &2473239067790111221 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7009095894247873874, guid: baec7c2da6cf45346a349ec1940aa4fa, type: 3}
