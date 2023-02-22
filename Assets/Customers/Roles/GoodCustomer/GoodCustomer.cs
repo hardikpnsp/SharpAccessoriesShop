@@ -18,12 +18,13 @@ public class GoodCustomer : Customer
 
     public Transform GetQueuePosition()
     {
-        return QueueController.GetStartPosition();
+        return QueueController.GetPosition(this);
     }
 
     public void JoinQueue()
     {
         Join();
+        UpdateQueuePosition();
         _patienceController.StartTimer(_queueWaitingTime);
     }
 
@@ -37,7 +38,7 @@ public class GoodCustomer : Customer
         bool positionFound = stand.TryTakeRandomPosition(out Transform position);
         return positionFound ? position : null;
     }
-
+        
     private void OnWaitingTimeEnded()
     {
         Exit();
@@ -47,24 +48,41 @@ public class GoodCustomer : Customer
     private void OnServed(Customer customer)
     {
         if (customer != this)
-            return;
-
-        _patienceController.StopTimer();
-        Exit();
-        Served?.Invoke();
+        {
+            UpdateQueuePosition();
+        }
+        else
+        {
+            _patienceController.StopTimer();
+            Exit();
+            Served?.Invoke();
+        }
     }
 
     private void Join()
     {
         QueueController.JoinQueue(this);
         QueueController.Instance.CustomerServed.AddListener(OnServed);
+        QueueController.Instance.CustomerExit.AddListener(OnQueuePositionUpdated);
         _patienceController.PatienceTimerEnded.AddListener(OnWaitingTimeEnded);
     }
 
     private void Exit()
     {
-        QueueController.ExitQueue(this);
         QueueController.Instance.CustomerServed.RemoveListener(OnServed);
+        QueueController.Instance.CustomerExit.RemoveListener(OnQueuePositionUpdated);
+        QueueController.ExitQueue(this);
         _patienceController.PatienceTimerEnded.RemoveListener(OnWaitingTimeEnded);
+    }
+
+    private void UpdateQueuePosition()
+    {
+        Transform position = QueueController.GetPosition(this);
+        MoveTowards(position);
+    }
+
+    private void OnQueuePositionUpdated()
+    {
+        UpdateQueuePosition();
     }
 }
