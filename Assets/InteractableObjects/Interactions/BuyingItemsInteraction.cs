@@ -21,17 +21,17 @@ public class BuyingItemsInteraction : Interaction
 
     QueueController QueueController;
 
-    TimerController TimerController;
+    //TimerController TimerController;
 
-    bool inCooldown = false;
+    //bool inCooldown = false;
 
-    [SerializeField]
-    float cooldownTime;
+    //[SerializeField]
+    //float cooldownTime;
 
     private void Start()
     {
         QueueController = QueueController.Instance;
-        TimerController = TimerController.Instance;
+        //TimerController = TimerController.Instance;
     }
 
     protected override bool CanInteract()
@@ -55,15 +55,11 @@ public class BuyingItemsInteraction : Interaction
         playerDialog.SpawnAndGetTextBox().SetUp(null, playerDialogSuccess.GetRandom());
         confidenceController.IncreaseConfidence((uint)confidenceIncreace);
 
-        TimerController.CreateTimer(cooldownTime, OnTimerEnd);
-        inCooldown = true;
+       // TimerController.CreateTimer(cooldownTime, OnTimerEnd);
+        //inCooldown = true;
 
         return InteractionResult.Success;
     }
 
-    private void OnTimerEnd()
-    {
-        inCooldown = false;
-    }
 }
 

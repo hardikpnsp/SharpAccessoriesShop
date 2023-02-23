@@ -7,6 +7,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8267797205686613220, guid: baec7c2da6cf45346a349ec1940aa4fa, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8267797205686613220, guid: baec7c2da6cf45346a349ec1940aa4fa, type: 3}
+      propertyPath: m_SpriteSortPoint
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -5616819558663568873, guid: baec7c2da6cf45346a349ec1940aa4fa, type: 3}
       propertyPath: _serializedBlackboard
       value: '{"_variables":{"idleTime":{"_name":"idleTime","_id":"41067abe-8b22-4fe4-9759-918833751a45","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
@@ -47,6 +55,10 @@ PrefabInstance:
       propertyPath: _graph
       value: 
       objectReference: {fileID: 11400000, guid: b0c53df8527667546ba92a4adacf8699, type: 2}
+    - target: {fileID: 2110005546593749425, guid: baec7c2da6cf45346a349ec1940aa4fa, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 089265f0240be9e4bb7eeb46165e53cf, type: 2}
     - target: {fileID: 6247046330794357277, guid: baec7c2da6cf45346a349ec1940aa4fa, type: 3}
       propertyPath: m_Name
       value: GoodCustomer
@@ -57,11 +69,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7009095894247873874, guid: baec7c2da6cf45346a349ec1940aa4fa, type: 3}
       propertyPath: m_LocalScale.x
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7009095894247873874, guid: baec7c2da6cf45346a349ec1940aa4fa, type: 3}
       propertyPath: m_LocalScale.y
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7009095894247873874, guid: baec7c2da6cf45346a349ec1940aa4fa, type: 3}
       propertyPath: m_LocalPosition.x
