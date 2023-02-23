@@ -89,18 +89,20 @@ public class QueueController : MonoBehaviour
 
         Instance.customers.Add(customer);
 
-        if(Instance.queuePositions.Length == 1)
+        if(Instance.customers.Count == 1)
         {
             customer.ReachedDestination += Instance.Customer_ReachedDestination;
             Instance.isReadyToServe = false;
         }
             
+        
 
     }
 
     private void Customer_ReachedDestination()
     {
         isReadyToServe = true;
+        
     }
 
     public static void ExitQueue(Customer customer)
@@ -118,7 +120,7 @@ public class QueueController : MonoBehaviour
             {
                 customer.ReachedDestination -= Instance.Customer_ReachedDestination;
 
-                if(Instance.queuePositions.Length >= 2)
+                if(Instance.customers.Count >= 2)
                 {
                     Instance.customers[1].ReachedDestination += Instance.Customer_ReachedDestination;
                     Instance.isReadyToServe = false;
@@ -128,11 +130,21 @@ public class QueueController : MonoBehaviour
             
             
             Instance.customers.Remove(customer);
+
+            Instance.MoveCustomers();
             Instance.CustomerExit.Invoke();
         }
 
 
         
+    }
+
+    private void MoveCustomers()
+    {
+        foreach(Customer customer in customers)
+        {
+            customer.MoveTowards(GetPosition(customer));
+        }
     }
 
     private void OnDestroy()

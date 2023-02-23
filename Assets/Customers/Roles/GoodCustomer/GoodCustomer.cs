@@ -49,7 +49,7 @@ public class GoodCustomer : Customer
     {
         if (customer != this)
         {
-            UpdateQueuePosition();
+            //UpdateQueuePosition();
         }
         else
         {
