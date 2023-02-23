@@ -36,7 +36,7 @@ public class BuyingItemsInteraction : Interaction
 
     protected override bool CanInteract()
     {
-        return !QueueController.Empty && !inCooldown;
+        return !QueueController.Empty && QueueController.isReadyToServe;
     }
 
     protected override void OnPlayerEnterZone()

@@ -322,6 +322,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimerController: {fileID: 1680159543}
   customers: []
+  isReadyToServe: 0
   CustomerServed:
     m_PersistentCalls:
       m_Calls: []
@@ -384,7 +385,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 416324437}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 790b8d5e23d1210458e91336ffce4828, type: 3}
   m_Name: 
@@ -405,7 +406,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 416324437}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a619a5dfb562b5468bffdcd37ea6eaa, type: 3}
   m_Name: 
