@@ -24,6 +24,7 @@ public class QueueController : MonoBehaviour
     }
 
     public CustomerServedEvent CustomerServed;
+    public CustomerExitEvent CustomerExit;
 
     [SerializeField]
     private Transform startPos;
@@ -36,7 +37,7 @@ public class QueueController : MonoBehaviour
 
     private void Awake()
     {
-        if(Instance == null)
+        if (Instance == null)
         {
             Instance = this;
         }
@@ -45,7 +46,7 @@ public class QueueController : MonoBehaviour
             Destroy(this);
         }
 
-        if(interactable != null)
+        if (interactable != null)
         {
             interactable.InteractionComplete.AddListener(OnPlayerInteract);
         }
@@ -53,12 +54,11 @@ public class QueueController : MonoBehaviour
 
     public static Transform GetPosition(Customer customer)
     {
-        if(Instance != null && customer != null)
+        if (Instance != null && customer != null)
         {
             if (Instance.customers.Contains(customer))
             {
                 int index = Instance.customers.IndexOf(customer);
-
                 return Instance.queuePositions[index];
             }
             else
@@ -75,39 +75,37 @@ public class QueueController : MonoBehaviour
 
     public static bool CanJoinQueue()
     {
-        if (Instance != null)
-        {
-            return Instance.customers.Count < Instance.queuePositions.Length;
-        }
-        else
-            return false;
+        return Instance != null ? Instance.customers.Count < Instance.queuePositions.Length : false;
     }
 
     public static void JoinQueue(Customer customer)
     {
-        if(Instance == null)
+        if (Instance == null)
         {
             throw new System.Exception("QueueController Instance is null");
         }
 
         Instance.customers.Add(customer);
-        
+
     }
 
     public static void ExitQueue(Customer customer)
     {
-        //if (Instance == null)
-        //{
-        //    throw new System.Exception("QueueController Instance is null");
-        //}
+        if (Instance == null)
+        {
+            throw new System.Exception("QueueController Instance is null");
+        }
 
-        //Instance.customers.Remove(customer);
+        if (Instance.customers.Contains(customer))
+        {
+            Instance.customers.Remove(customer);
+            Instance.CustomerExit.Invoke();
+        }
     }
-
 
     private void OnDestroy()
     {
-        if(Instance == this)
+        if (Instance == this)
         {
             Instance = null;
         }
@@ -115,13 +113,12 @@ public class QueueController : MonoBehaviour
 
     private void OnPlayerInteract(Interaction.InteractionResult result)
     {
-        customers.Remove(customers[0]);
-
         CustomerServed.Invoke(customers[0]);
-
     }
 
     [System.Serializable]
-    public class CustomerServedEvent : UnityEvent<Customer>
-    { }
+    public class CustomerServedEvent : UnityEvent<Customer> { }
+
+    [System.Serializable]
+    public class CustomerExitEvent : UnityEvent { }
 }

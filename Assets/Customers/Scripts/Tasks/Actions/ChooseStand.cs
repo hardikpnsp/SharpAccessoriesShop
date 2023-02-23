@@ -6,7 +6,7 @@ namespace CustomersActions
 {
     public class ChooseStand : ActionTask<GoodCustomer>
     {
-        [RequiredField] public BBParameter<Transform> Target;
+        public BBParameter<Transform> Target;
 
         protected override string OnInit()
         {
