@@ -10,7 +10,6 @@ public class BadCustomer : Customer
 {
     [SerializeField] private Illegal_Interaction _interaction;
     [SerializeField, Min(1)] private float _badActingTime;
-
     [SerializeField] private InteractableObject InteractableObject;
 
     public event Action BadActingSucceded;
@@ -19,7 +18,6 @@ public class BadCustomer : Customer
     public void ActBadly()
     {
         StartActingBadly();
-        //PlayAnimation("ActBad");
     }
 
     private void OnTimerEnded()
@@ -30,11 +28,8 @@ public class BadCustomer : Customer
 
     private void OnInteracted(Interaction.InteractionResult result)
     {
-        if (result == Interaction.InteractionResult.Success)
-        {
-            StopActingBadly();
-            BadActingPrevented?.Invoke();
-        }
+        StopActingBadly();
+        BadActingPrevented?.Invoke();
     }
 
     private void StartActingBadly()

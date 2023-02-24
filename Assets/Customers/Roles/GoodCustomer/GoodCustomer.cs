@@ -24,9 +24,8 @@ public class GoodCustomer : Customer
     {
         Join();
         UpdateQueuePosition();
-        PatienceController.StartTimer(_queueWaitingTime);
     }
-        
+       
     private void OnWaitingTimeEnded()
     {
         Exit();
@@ -53,14 +52,15 @@ public class GoodCustomer : Customer
         QueueController.Instance.CustomerServed.AddListener(OnServed);
         QueueController.Instance.CustomerExit.AddListener(OnQueuePositionUpdated);
         PatienceController.PatienceTimerEnded.AddListener(OnWaitingTimeEnded);
+        ReachedDestination += OnJoinedQueue;
     }
 
     private void Exit()
     {
         QueueController.Instance.CustomerServed.RemoveListener(OnServed);
         QueueController.Instance.CustomerExit.RemoveListener(OnQueuePositionUpdated);
-        QueueController.ExitQueue(this);
         PatienceController.PatienceTimerEnded.RemoveListener(OnWaitingTimeEnded);
+        QueueController.ExitQueue(this);
     }
 
     private void UpdateQueuePosition()
@@ -72,5 +72,11 @@ public class GoodCustomer : Customer
     private void OnQueuePositionUpdated()
     {
         UpdateQueuePosition();
+    }
+
+    private void OnJoinedQueue()
+    {
+        PatienceController.StartTimer(_queueWaitingTime);
+        ReachedDestination -= OnJoinedQueue;
     }
 }

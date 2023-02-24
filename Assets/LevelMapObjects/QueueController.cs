@@ -94,9 +94,6 @@ public class QueueController : MonoBehaviour
             customer.ReachedDestination += Instance.Customer_ReachedDestination;
             Instance.isReadyToServe = false;
         }
-            
-        
-
     }
 
     private void Customer_ReachedDestination()
