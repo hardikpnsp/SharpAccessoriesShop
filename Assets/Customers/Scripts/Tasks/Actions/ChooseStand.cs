@@ -4,7 +4,7 @@ using ParadoxNotion.Design;
 
 namespace CustomersActions
 {
-    public class ChooseStand : ActionTask<GoodCustomer>
+    public class ChooseStand : ActionTask<Customer>
     {
         public BBParameter<Transform> Target;
 

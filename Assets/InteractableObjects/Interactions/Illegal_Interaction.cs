@@ -8,9 +8,6 @@ public class Illegal_Interaction : Interaction
     public int confidenceNeeded;
 
     [SerializeField]
-    private ConfidenceController ConfidenceController;
-
-    [SerializeField]
     TextBoxSpawner dialogTextBoxSpawner;
 
     [SerializeField]

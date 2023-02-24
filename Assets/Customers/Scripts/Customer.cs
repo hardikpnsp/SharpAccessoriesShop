@@ -3,15 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using NodeCanvas.BehaviourTrees;
 using System;
-    
-[RequireComponent(typeof(BehaviourTreeOwner))]
-[RequireComponent(typeof(CustomerMovement))]
+using Assets.LevelMapObjects;
+
+[RequireComponent(typeof(BehaviourTreeOwner), typeof(CustomerMovement), typeof(Animator))]
 public class Customer : MonoBehaviour
 {
+    [SerializeField] PatienceController _patienceController;
+
+    private Animator _animator;
     private BehaviourTreeOwner _btOwner;
     private CustomerMovement _movement;
     private Transform _spawnPoint;
     private Transform _destination;
+
+    protected PatienceController PatienceController => _patienceController;
 
     public event Action ReachedDestination;
     public event Action<Customer, bool> Left;
@@ -20,7 +25,19 @@ public class Customer : MonoBehaviour
     {
         _btOwner = GetComponent<BehaviourTreeOwner>();
         _movement = GetComponent<CustomerMovement>();
+        _animator = GetComponent<Animator>();
         _btOwner.StopBehaviour();
+    }
+
+    public Transform ChooseStand()
+    {
+        WeaponStand stand = LevelMapController.GetRandomWeaponStand();
+
+        if (stand == null)
+            return null;
+
+        bool positionFound = stand.TryTakeRandomPosition(out Transform position);
+        return positionFound ? position : null;
     }
 
     public void Spawn(Transform position)
@@ -46,6 +63,11 @@ public class Customer : MonoBehaviour
     public void Despawn()
     {
         Destroy(gameObject);
+    }
+
+    protected void PlayAnimation(string name)
+    {
+        _animator.Play(name);
     }
 
     private void OnDestinationReached() 

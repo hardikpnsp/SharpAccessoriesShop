@@ -10,8 +10,6 @@ public class Mirror_Interaction : Interaction
 
     private bool inCooldown;
 
-    ConfidenceController ConfidenceController;
-
     [SerializeField]
     TextBoxSpawner dialogTextBoxSpawner;
 
@@ -20,11 +18,6 @@ public class Mirror_Interaction : Interaction
 
     [SerializeField]
     private DialogController_SO dialog;
-
-    private void Start()
-    {
-        ConfidenceController = FindObjectOfType<ConfidenceController>();
-    }
 
     protected override bool CanInteract()
     {

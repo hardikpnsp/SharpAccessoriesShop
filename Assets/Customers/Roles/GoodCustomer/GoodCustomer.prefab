@@ -1,50 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8800870934548360075
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6738672351443690702}
-  - component: {fileID: 1013412469537051463}
-  m_Layer: 0
-  m_Name: PatienceUISpawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6738672351443690702
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8800870934548360075}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 7, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6434735187251295766}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1013412469537051463
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8800870934548360075}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b67bcd314a713f24383bc03cdc31c2a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 6604038265230192188, guid: a058b4beb9131c44987b482b8b7e5b2d, type: 3}
 --- !u!1001 &4834607879626714279
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -99,7 +54,31 @@ PrefabInstance:
     - target: {fileID: -2759574181778828148, guid: baec7c2da6cf45346a349ec1940aa4fa, type: 3}
       propertyPath: _graph
       value: 
-      objectReference: {fileID: 11400000, guid: b0c53df8527667546ba92a4adacf8699, type: 2}
+      objectReference: {fileID: 0}
+    - target: {fileID: -2759574181778828148, guid: baec7c2da6cf45346a349ec1940aa4fa, type: 3}
+      propertyPath: _boundGraphSerialization
+      value: '{"type":"NodeCanvas.BehaviourTrees.BehaviourTree","nodes":[{"_position":{"x":-1043.235,"y":-164.6258},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"0"},{"_position":{"x":-1280.894,"y":-47.34609},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"1"},{"_action":{"Target":{"_name":"target","_targetVariableID":"f2918d4d-ecc1-42b8-bfec-19522482c6c3"},"$type":"CustomersActions.ChooseStand"},"_position":{"x":-1401.092,"y":86.49954},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"2"},{"_action":{"Target":{"_name":"target","_targetVariableID":"f2918d4d-ecc1-42b8-bfec-19522482c6c3"},"$type":"CustomersActions.MoveTowardsTarget"},"_position":{"x":-1352.6,"y":172.5934},"_comment":"Moves
+        to chosen stand","$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"3"},{"_condition":{"eventInfo":{"_baseInfo":"Customer|ReachedDestination"},"$type":"NodeCanvas.Tasks.Conditions.CheckCSharpEvent","$version":1},"_position":{"x":-1217.614,"y":85.37674},"$type":"NodeCanvas.BehaviourTrees.WaitUntil","$id":"4"},{"_position":{"x":-1159.739,"y":213.2979},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"5"},{"_action":{"MinIdleTime":{"_value":5.0},"MaxIdleTime":{"_value":10.0},"IdleTime":{"_name":"idleTime","_targetVariableID":"41067abe-8b22-4fe4-9759-918833751a45"},"$type":"CustomersActions.SetRandomIdleTime"},"_position":{"x":-1324.739,"y":292.2979},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"6"},{"_action":{"waitTime":{"_name":"idleTime","_targetVariableID":"41067abe-8b22-4fe4-9759-918833751a45"},"$type":"NodeCanvas.Tasks.Actions.Wait"},"_position":{"x":-1158.739,"y":292.2979},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"7"},{"dynamic":true,"_position":{"x":-780.4879,"y":242.4773},"$type":"NodeCanvas.BehaviourTrees.Selector","$id":"8"},{"_position":{"x":-906.7086,"y":390.9881},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"9"},{"_condition":{"_invert":true,"$type":"CustomersConditions.CanJoinQueue"},"_position":{"x":-1017.881,"y":532.7631},"$type":"NodeCanvas.BehaviourTrees.Interruptor","$id":"10"},{"_position":{"x":-1055.783,"y":685.2},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"11"},{"_action":{"$type":"CustomersActions.JoinQueue"},"_position":{"x":-1272.512,"y":823.4286},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"12"},{"_action":{"QueuePosition":{"_name":"target","_targetVariableID":"f2918d4d-ecc1-42b8-bfec-19522482c6c3"},"$type":"NodeCanvas.Tasks.Actions.SetQueuePosition"},"_position":{"x":-1204.459,"y":901.0532},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"13"},{"_action":{"Target":{"_name":"target","_targetVariableID":"f2918d4d-ecc1-42b8-bfec-19522482c6c3"},"$type":"CustomersActions.MoveTowardsTarget"},"_position":{"x":-1065.411,"y":950.73},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"14"},{"policy":1,"_position":{"x":-673.417,"y":663.4502},"$type":"NodeCanvas.BehaviourTrees.Parallel","$id":"15"},{"_condition":{"eventInfo":{"_baseInfo":"GoodCustomer|Served"},"$type":"NodeCanvas.Tasks.Conditions.CheckCSharpEvent","$version":1},"_position":{"x":-779.5829,"y":774.7083},"$type":"NodeCanvas.BehaviourTrees.WaitUntil","$id":"16"},{"_action":{"Happy":{"_value":true},"$type":"CustomersActions.Leave"},"_position":{"x":-759.5252,"y":919.6887},"_comment":"Leaves
+        happy","$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"17"},{"_condition":{"eventInfo":{"_baseInfo":"GoodCustomer|WaitingTimeExpired"},"$type":"NodeCanvas.Tasks.Conditions.CheckCSharpEvent","$version":1},"_position":{"x":-629.6819,"y":773.2985},"$type":"NodeCanvas.BehaviourTrees.WaitUntil","$id":"18"},{"_action":{"Happy":{},"$type":"CustomersActions.Leave"},"_position":{"x":-577.1193,"y":893.8018},"_comment":"Leaves
+        unhappy","$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"19"},{"_action":{"Happy":{},"$type":"CustomersActions.Leave"},"_position":{"x":-639.4599,"y":401.6311},"_comment":"Leaves
+        unhappy\n","$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"20"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"8"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"6"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"7"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"8"},"_targetNode":{"$ref":"9"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"8"},"_targetNode":{"$ref":"20"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"9"},"_targetNode":{"$ref":"10"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"9"},"_targetNode":{"$ref":"15"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"10"},"_targetNode":{"$ref":"11"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"11"},"_targetNode":{"$ref":"12"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"11"},"_targetNode":{"$ref":"13"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"11"},"_targetNode":{"$ref":"14"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"15"},"_targetNode":{"$ref":"16"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"15"},"_targetNode":{"$ref":"18"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"16"},"_targetNode":{"$ref":"17"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"18"},"_targetNode":{"$ref":"19"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
+      objectReference: {fileID: 0}
+    - target: {fileID: -2759574181778828148, guid: baec7c2da6cf45346a349ec1940aa4fa, type: 3}
+      propertyPath: _boundGraphSource._version
+      value: 3.25
+      objectReference: {fileID: 0}
+    - target: {fileID: -2759574181778828148, guid: baec7c2da6cf45346a349ec1940aa4fa, type: 3}
+      propertyPath: _boundGraphSource._zoomFactor
+      value: 0.2500094
+      objectReference: {fileID: 0}
+    - target: {fileID: -2759574181778828148, guid: baec7c2da6cf45346a349ec1940aa4fa, type: 3}
+      propertyPath: _boundGraphSource._translation.x
+      value: 831.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: -2759574181778828148, guid: baec7c2da6cf45346a349ec1940aa4fa, type: 3}
+      propertyPath: _boundGraphSource._translation.y
+      value: 339.99994
+      objectReference: {fileID: 0}
     - target: {fileID: 2110005546593749425, guid: baec7c2da6cf45346a349ec1940aa4fa, type: 3}
       propertyPath: m_Controller
       value: 
@@ -184,43 +163,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 054666021fc7e4e468e82cd1aa17309a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _patienceController: {fileID: 8436141658355016960}
+  _patienceController: {fileID: 5047616909973390434}
   _queueWaitingTime: 10
 --- !u!4 &2473239067790111221 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7009095894247873874, guid: baec7c2da6cf45346a349ec1940aa4fa, type: 3}
   m_PrefabInstance: {fileID: 4834607879626714279}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &4636135690567914656 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 234511092221212679, guid: baec7c2da6cf45346a349ec1940aa4fa, type: 3}
+--- !u!114 &5047616909973390434 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 367965406705248453, guid: baec7c2da6cf45346a349ec1940aa4fa, type: 3}
   m_PrefabInstance: {fileID: 4834607879626714279}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8436141658355016960
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4636135690567914656}
+  m_GameObject: {fileID: 1559949483491712698}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6958c5b84352c55408766c18c0176bc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PatienceTimerStarted:
-    m_PersistentCalls:
-      m_Calls: []
-  PatienceTimerEnded:
-    m_PersistentCalls:
-      m_Calls: []
-  PatienceTimerStoped:
-    m_PersistentCalls:
-      m_Calls: []
-  timer: {fileID: 0}
-  lengthSeconds: 0
---- !u!4 &6434735187251295766 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1899181826403310257, guid: baec7c2da6cf45346a349ec1940aa4fa, type: 3}
-  m_PrefabInstance: {fileID: 4834607879626714279}
-  m_PrefabAsset: {fileID: 0}
