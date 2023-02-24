@@ -10,11 +10,13 @@ public class Interaction : MonoBehaviour
 
     public UnityEvent<InteractionResult> InteractionComplete;
 
+    protected InteractableObject interactableObject;
+
     protected void Awake()
     {
         if (ConnectToSelfInteractableOnStart)
         {
-            InteractableObject interactableObject = GetComponent<InteractableObject>();
+            interactableObject = GetComponent<InteractableObject>();
 
             if (interactableObject != null)
             {
@@ -27,11 +29,24 @@ public class Interaction : MonoBehaviour
         }      
     }
 
-    public void SetInteractable(InteractableObject interactableObject)
+    public void SetInteractable(InteractableObject interactable)
     {
-        interactableObject.PlayerEnterZone.AddListener(OnPlayerEnterZone);
-        interactableObject.PlayerExitZone.AddListener(OnPlayerExitZone);
-        interactableObject.PlayerInteract.AddListener(TryInteract);
+        if(this.interactableObject != null)
+        {
+            interactableObject.PlayerEnterZone.RemoveListener(OnPlayerEnterZone);
+            interactableObject.PlayerExitZone.RemoveListener(OnPlayerExitZone);
+            OnPlayerExitZone();
+            interactableObject.PlayerInteract.RemoveListener(TryInteract);
+        }
+
+        if (interactable != null)
+        {
+            interactableObject = interactable;
+            interactable.PlayerEnterZone.AddListener(OnPlayerEnterZone);
+            interactable.PlayerExitZone.AddListener(OnPlayerExitZone);
+            interactable.PlayerInteract.AddListener(TryInteract);
+        }
+       
     }
 
     protected virtual void OnPlayerEnterZone()

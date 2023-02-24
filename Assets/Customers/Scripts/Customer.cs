@@ -70,6 +70,11 @@ public class Customer : MonoBehaviour
         _animator.Play(name);
     }
 
+    protected void SetAnimationBool(string name, bool value)
+    {
+        _animator.SetBool(name, value);
+    }
+
     private void OnDestinationReached() 
     {
         _movement.DestinationReached -= OnDestinationReached;

@@ -7,6 +7,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2100559883701420563, guid: 5d746d48728de6740aa3f61c09a3c04b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2100559883701420563, guid: 5d746d48728de6740aa3f61c09a3c04b, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2100559883701420563, guid: 5d746d48728de6740aa3f61c09a3c04b, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2100559883701420563, guid: 5d746d48728de6740aa3f61c09a3c04b, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2100559883701420563, guid: 5d746d48728de6740aa3f61c09a3c04b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2100559883701420563, guid: 5d746d48728de6740aa3f61c09a3c04b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4718322542607628236, guid: 5d746d48728de6740aa3f61c09a3c04b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -141,11 +165,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4718322544407101030, guid: 5d746d48728de6740aa3f61c09a3c04b, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.08
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 4718322544407101030, guid: 5d746d48728de6740aa3f61c09a3c04b, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.08
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 4718322544407101030, guid: 5d746d48728de6740aa3f61c09a3c04b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -201,7 +225,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4718322544407101033, guid: 5d746d48728de6740aa3f61c09a3c04b, type: 3}
       propertyPath: m_Name
-      value: Interact_TextBox
+      value: Mirror_Interact
       objectReference: {fileID: 0}
     - target: {fileID: 4718322544407101033, guid: 5d746d48728de6740aa3f61c09a3c04b, type: 3}
       propertyPath: m_IsActive

@@ -43,7 +43,11 @@ public class PatienceUISpawner : MonoBehaviour
 
     private void RemovePatienceUI()
     {
-        Destroy(ui.gameObject);
-        ui = null;
+        if(ui != null)
+        {
+            Destroy(ui.gameObject);
+            ui = null;
+        }
+
     }
 }

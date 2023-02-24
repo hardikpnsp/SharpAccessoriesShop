@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Diagnostics;
 
 public class Illegal_Interaction : Interaction
 {
@@ -10,10 +11,8 @@ public class Illegal_Interaction : Interaction
     [SerializeField]
     TextBoxSpawner dialogTextBoxSpawner;
 
-    [SerializeField]
     TextBoxSpawner interactTextBoxSpawner;
 
-    [SerializeField]
     TextBoxSpawner playerDialog;
 
     [SerializeField]
@@ -21,6 +20,12 @@ public class Illegal_Interaction : Interaction
 
     [SerializeField]
     private DialogController_SO playerDialogSuccess;
+
+    private void Start()
+    {
+        playerDialog = PlayerController.Instance.PlayerDialogBox;
+        interactTextBoxSpawner = PlayerController.Instance.PlayerInteractBox;
+    }
 
     protected override bool CanInteract()
     {
@@ -31,7 +36,7 @@ public class Illegal_Interaction : Interaction
     {
         if(ConfidenceController.Confidence < confidenceNeeded)
         {
-            playerDialog.SpawnAndGetTextBox().SetUp(null, playerDialogFail.GetRandom());
+            dialogTextBoxSpawner.SpawnAndGetTextBox().SetUp(null, playerDialogFail.GetRandom());
             return InteractionResult.Fail;
         }
         else
