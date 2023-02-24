@@ -4,24 +4,22 @@ using UnityEngine;
 
 public abstract class ConfidenceView : MonoBehaviour
 {
-    [SerializeField] private ConfidenceController _controller;
-
-    protected int MaxValue => _controller.MaxConfidence;
+    protected int MaxValue => ConfidenceController.MaxConfidence;
 
     private void OnEnable()
     {
-        _controller.ConfidenceChanged += OnConfidenceChanged;
+        ConfidenceController.ConfidenceChanged += OnConfidenceChanged;
     }
-
+    
     private void OnDisable()
     {
-        _controller.ConfidenceChanged -= OnConfidenceChanged;
+        ConfidenceController.ConfidenceChanged -= OnConfidenceChanged;
     }
 
     private void Start()
     {
         InitializeView();
-        SetValue(_controller.Confidence);
+        SetValue(ConfidenceController.Confidence);
     }
 
     public abstract void SetValue(int value);

@@ -8,15 +8,27 @@ public class ConfidenceController : MonoBehaviour
     [SerializeField] private uint _maxConfidence;
     [SerializeField] private uint _startConfidence;
 
+    private static ConfidenceController instance;
+
     private Confidence _confidence;
+    private static Confidence confidence => instance._confidence;
 
-    public int MaxConfidence => (int)_maxConfidence;
-    public int Confidence => _confidence == null ? 0 : _confidence.Value;
+    public static int MaxConfidence => (int)instance._maxConfidence;
+    public static int Confidence => confidence  == null ? 0 : confidence.Value;
 
-    public event UnityAction<int> ConfidenceChanged;
+    public static event UnityAction<int> ConfidenceChanged;
 
     private void Awake()
     {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+
         _confidence = new Confidence(_maxConfidence, _startConfidence);
     }
 
@@ -26,31 +38,22 @@ public class ConfidenceController : MonoBehaviour
             _startConfidence = _maxConfidence;
     }
 
-    public void IncreaseConfidence(uint value)
+    public static void IncreaseConfidence(uint value)
     {
-        ChangeConfidence(_confidence.IncreaseValue, (int)value);
+        ChangeConfidence(confidence.IncreaseValue, (int)value);
     }
 
-    public void DecreaseConfidence(uint value)
+    public static void DecreaseConfidence(uint value)
     {
-        ChangeConfidence(_confidence.DecreaseValue, (int)value);
+        ChangeConfidence(confidence.DecreaseValue, (int)value);
     }
 
-    private void ChangeConfidence(Action<int> action, int value)
+    private static void ChangeConfidence(Action<int> action, int value)
     {
         if (value == 0)
             return;
 
-        if (_confidence == null)
-            StartCoroutine(WaitForInitialization());
-
         action.Invoke(value);
-        ConfidenceChanged?.Invoke(_confidence.Value);
-    }
-
-    private IEnumerator WaitForInitialization()
-    {
-        while (_confidence == null)
-            yield return null;
+        ConfidenceChanged?.Invoke(confidence.Value);
     }
 }

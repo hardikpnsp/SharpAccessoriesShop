@@ -11,9 +11,6 @@ public class BuyingItemsInteraction : Interaction
     int confidenceIncreace;
 
     [SerializeField]
-    ConfidenceController confidenceController;
-
-    [SerializeField]
     TextBoxSpawner playerDialog;
 
     [SerializeField]
@@ -53,7 +50,7 @@ public class BuyingItemsInteraction : Interaction
     protected override InteractionResult Interact()
     {
         playerDialog.SpawnAndGetTextBox().SetUp(null, playerDialogSuccess.GetRandom());
-        confidenceController.IncreaseConfidence((uint)confidenceIncreace);
+        ConfidenceController.IncreaseConfidence((uint)confidenceIncreace);
 
        // TimerController.CreateTimer(cooldownTime, OnTimerEnd);
         //inCooldown = true;

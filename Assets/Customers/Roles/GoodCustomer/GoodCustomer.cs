@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class GoodCustomer : Customer
 {
-    [SerializeField] PatienceController _patienceController;
     [SerializeField, Min(MinQueueWaitingTime)] private float _queueWaitingTime;
 
     private const float MinQueueWaitingTime = 0.1f;
@@ -25,18 +24,7 @@ public class GoodCustomer : Customer
     {
         Join();
         UpdateQueuePosition();
-        _patienceController.StartTimer(_queueWaitingTime);
-    }
-
-    public Transform ChooseStand()
-    {
-        WeaponStand stand = LevelMapController.GetRandomWeaponStand();
-
-        if (stand == null)
-            return null;
-
-        bool positionFound = stand.TryTakeRandomPosition(out Transform position);
-        return positionFound ? position : null;
+        PatienceController.StartTimer(_queueWaitingTime);
     }
         
     private void OnWaitingTimeEnded()
@@ -53,7 +41,7 @@ public class GoodCustomer : Customer
         }
         else
         {
-            _patienceController.StopTimer();
+            PatienceController.StopTimer();
             Exit();
             Served?.Invoke();
         }
@@ -64,7 +52,7 @@ public class GoodCustomer : Customer
         QueueController.JoinQueue(this);
         QueueController.Instance.CustomerServed.AddListener(OnServed);
         QueueController.Instance.CustomerExit.AddListener(OnQueuePositionUpdated);
-        _patienceController.PatienceTimerEnded.AddListener(OnWaitingTimeEnded);
+        PatienceController.PatienceTimerEnded.AddListener(OnWaitingTimeEnded);
     }
 
     private void Exit()
@@ -72,7 +60,7 @@ public class GoodCustomer : Customer
         QueueController.Instance.CustomerServed.RemoveListener(OnServed);
         QueueController.Instance.CustomerExit.RemoveListener(OnQueuePositionUpdated);
         QueueController.ExitQueue(this);
-        _patienceController.PatienceTimerEnded.RemoveListener(OnWaitingTimeEnded);
+        PatienceController.PatienceTimerEnded.RemoveListener(OnWaitingTimeEnded);
     }
 
     private void UpdateQueuePosition()
