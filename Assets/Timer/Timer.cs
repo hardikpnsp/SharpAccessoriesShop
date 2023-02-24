@@ -76,9 +76,9 @@ public class Timer : MonoBehaviour
     {
         isWorking = false;
 
-        timerEnded.Invoke();
+        timerEnded?.Invoke();
 
         ResetTimer();
-        
+
     }
 }
