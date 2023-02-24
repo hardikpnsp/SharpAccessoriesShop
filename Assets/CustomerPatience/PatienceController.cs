@@ -9,9 +9,13 @@ public class PatienceController : MonoBehaviour
 
     public UnityEvent PatienceTimerEnded;
 
+    public UnityEvent PatienceTimerStoped;
+
     private TimerController TimerController;
 
-    private Timer timer;
+    public Timer timer;
+
+    public float lengthSeconds;
 
     private void Start()
     {
@@ -25,6 +29,8 @@ public class PatienceController : MonoBehaviour
 
     public void StartTimer(float lengthSeconds)
     {
+        this.lengthSeconds = lengthSeconds;
+
         timer = TimerController.CreateTimer(lengthSeconds, OnTimerEnd);
 
         PatienceTimerStarted.Invoke();
@@ -32,9 +38,12 @@ public class PatienceController : MonoBehaviour
 
     private void OnTimerEnd()
     {
-        PatienceTimerEnded.Invoke();
+        if(timer != null)
+        {
+            PatienceTimerEnded?.Invoke();
+        }
 
-        StopTimer();
+
     }
 
     public void StopTimer()
@@ -43,6 +52,8 @@ public class PatienceController : MonoBehaviour
         {
             timer.StopAndReset();
             timer = null;
+
+            PatienceTimerStoped?.Invoke();
         }
     }
 }
