@@ -8,6 +8,9 @@ public class Mirror_Interaction : Interaction
 {
     public int confidenceIncreace;
 
+    [SerializeField]
+    private float cooldownLength;
+
     private bool inCooldown;
 
     [SerializeField]
@@ -18,6 +21,14 @@ public class Mirror_Interaction : Interaction
 
     [SerializeField]
     private DialogController_SO dialog;
+
+    [SerializeField]
+    PatienceController PatienceController;
+
+    private void Start()
+    {
+        PatienceController.PatienceTimerEnded.AddListener(OnPatienceTimerEnded);
+    }
 
     protected override bool CanInteract()
     {
@@ -30,13 +41,16 @@ public class Mirror_Interaction : Interaction
         {
             return InteractionResult.Fail;
         }
-
-        StartCooldown();
         GiveConfindence();
         //inCooldown = true;
 
         ShowDialog();
-        PlayerController.Instance.PlayerTalkingController.Talk();
+        
+        inCooldown = true;
+        PatienceController.StartTimer(cooldownLength);
+        PlayerController.Instance.PlayerTalkingController.Talk(); 
+        
+
 
         return InteractionResult.Success;
 
@@ -63,6 +77,10 @@ public class Mirror_Interaction : Interaction
 
     }
 
+    private void OnPatienceTimerEnded()
+    {
+        inCooldown = false;
+    }
     private void ShowDialog()
     {
        dialogTextBoxSpawner.SpawnAndGetTextBox().SetUp(null, dialog.GetRandom());

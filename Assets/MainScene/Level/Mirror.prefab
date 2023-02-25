@@ -1,5 +1,50 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &115842287516707962
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4607791983796638462}
+  - component: {fileID: 2830469795354864587}
+  m_Layer: 0
+  m_Name: CooldownUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4607791983796638462
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115842287516707962}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 7, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7246125251973754090}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2830469795354864587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115842287516707962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b67bcd314a713f24383bc03cdc31c2a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 5126181211070588615, guid: 670844f271e18cc4e9973133493b0810, type: 3}
 --- !u!1 &7246125251446590069
 GameObject:
   m_ObjectHideFlags: 0
@@ -58,6 +103,7 @@ GameObject:
   - component: {fileID: 7246125251973754092}
   - component: {fileID: 7246125251973754091}
   - component: {fileID: 7246125251973754093}
+  - component: {fileID: 5545931999089419794}
   m_Layer: 0
   m_Name: Mirror
   m_TagString: Untagged
@@ -79,6 +125,7 @@ Transform:
   m_Children:
   - {fileID: 7246125252028906835}
   - {fileID: 7246125251446590070}
+  - {fileID: 4607791983796638462}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -172,9 +219,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   confidenceIncreace: 1
+  cooldownLength: 10
   dialogTextBoxSpawner: {fileID: 7246125251446590071}
   interactTextBoxSpawner: {fileID: 7246125252028906836}
   dialog: {fileID: 11400000, guid: 8f4795717e8fd8a4ba3872609525c25e, type: 2}
+  PatienceController: {fileID: 5545931999089419794}
 --- !u!60 &7246125251973754093
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -204,6 +253,29 @@ PolygonCollider2D:
       - {x: -1.2499995, y: -0.47790968}
       - {x: 0.8479401, y: -1.7786882}
       - {x: -0.50327015, y: -2.78884}
+--- !u!114 &5545931999089419794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7246125251973754088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6958c5b84352c55408766c18c0176bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PatienceTimerStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  PatienceTimerEnded:
+    m_PersistentCalls:
+      m_Calls: []
+  PatienceTimerStoped:
+    m_PersistentCalls:
+      m_Calls: []
+  timer: {fileID: 0}
+  lengthSeconds: 0
 --- !u!1 &7246125252028906834
 GameObject:
   m_ObjectHideFlags: 0

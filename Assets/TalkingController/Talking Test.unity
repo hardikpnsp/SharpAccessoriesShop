@@ -2561,6 +2561,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7246125251973754091, guid: d80e08beaa66e4e498414e1ff60cfa89, type: 3}
+      propertyPath: cooldownLength
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7246125251973754091, guid: d80e08beaa66e4e498414e1ff60cfa89, type: 3}
       propertyPath: interactTextBoxSpawner
       value: 
       objectReference: {fileID: 35447147}
