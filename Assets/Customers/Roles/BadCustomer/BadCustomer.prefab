@@ -253,6 +253,22 @@ CircleCollider2D:
   m_Offset: {x: 0.19000006, y: 0.30722737}
   serializedVersion: 2
   m_Radius: 1.9816644
+--- !u!58 &6687390533995468174
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3461654970007969460}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.12, y: 0.27}
+  serializedVersion: 2
+  m_Radius: 0.6
 --- !u!114 &-3730275318328524256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -310,22 +326,6 @@ MonoBehaviour:
   dialogTextBoxSpawner: {fileID: 7018393225720340130}
   playerDialogFail: {fileID: 11400000, guid: c7c9f09ae8517f744ba65c3578b9f185, type: 2}
   playerDialogSuccess: {fileID: 11400000, guid: 76b5c7cb774cbfd40a9e8bb568824d05, type: 2}
---- !u!58 &6687390533995468174
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3461654970007969460}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.12, y: 0.27}
-  serializedVersion: 2
-  m_Radius: 0.6
 --- !u!114 &7179008039337428076 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 367965406705248453, guid: baec7c2da6cf45346a349ec1940aa4fa, type: 3}

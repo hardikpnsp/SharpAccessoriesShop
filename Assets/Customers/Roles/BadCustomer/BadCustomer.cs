@@ -28,12 +28,11 @@ public class BadCustomer : Customer
 
     private void OnInteracted(Interaction.InteractionResult result)
     {
-        if(result == Interaction.InteractionResult.Success)
+        if (result == Interaction.InteractionResult.Success)
         {
             StopActingBadly();
             BadActingPrevented?.Invoke();
         }
-
     }
 
     private void StartActingBadly()
