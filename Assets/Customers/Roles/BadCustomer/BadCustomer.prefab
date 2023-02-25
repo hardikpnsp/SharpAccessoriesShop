@@ -126,11 +126,12 @@ PrefabInstance:
       value: '{"_variables":{"idleTime":{"_name":"idleTime","_id":"2924941c-2006-4e2d-aa7b-46f9bf4ffcd0","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"target":{"_name":"target","_id":"0dc0d4f6-55eb-4327-b417-1ca37cb1806b","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Transform,
         UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"wanderingProbability":{"_value":0.25,"_name":"wanderingProbability","_id":"a5b4e523-01f2-4bca-934a-2daeb60a4dd2","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"dialogTime":{"_value":2.0,"_name":"dialogTime","_id":"42b9c58c-cc62-47f6-9ba6-d48076e284d5","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}}}'
       objectReference: {fileID: 0}
     - target: {fileID: -5616819558663568873, guid: baec7c2da6cf45346a349ec1940aa4fa, type: 3}
       propertyPath: _serializedVariables.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -5616819558663568873, guid: baec7c2da6cf45346a349ec1940aa4fa, type: 3}
       propertyPath: _serializedVariables.Array.data[0]._json
@@ -145,6 +146,11 @@ PrefabInstance:
     - target: {fileID: -5616819558663568873, guid: baec7c2da6cf45346a349ec1940aa4fa, type: 3}
       propertyPath: _serializedVariables.Array.data[2]._json
       value: '{"_value":0.25,"_name":"wanderingProbability","_id":"a5b4e523-01f2-4bca-934a-2daeb60a4dd2","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
+      objectReference: {fileID: 0}
+    - target: {fileID: -5616819558663568873, guid: baec7c2da6cf45346a349ec1940aa4fa, type: 3}
+      propertyPath: _serializedVariables.Array.data[3]._json
+      value: '{"_value":2.0,"_name":"dialogTime","_id":"42b9c58c-cc62-47f6-9ba6-d48076e284d5","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
       objectReference: {fileID: 0}
     - target: {fileID: -2759574181778828148, guid: baec7c2da6cf45346a349ec1940aa4fa, type: 3}
