@@ -1,0 +1,452 @@
+fileFormatVersion: 2
+guid: 3028eab790689d1439904fe37c1239c8
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: sharp shop assets 4_0
+      rect:
+        serializedVersion: 2
+        x: 1982
+        y: 2326
+        width: 339
+        height: 245
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfef70b57bd71c94496ef50d0a582cd3
+      internalID: 140966458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sharp shop assets 4_2
+      rect:
+        serializedVersion: 2
+        x: 2628
+        y: 2176
+        width: 809
+        height: 355
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c6e9ac43bfcc3d4385b2760a41bdd72
+      internalID: 1414124952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sharp shop assets 4_4
+      rect:
+        serializedVersion: 2
+        x: 3930
+        y: 1597
+        width: 283
+        height: 555
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9564f6e18788884498c5d32ab2894f3c
+      internalID: -1003717317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sharp shop assets 4_5
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 1339
+        width: 453
+        height: 610
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d1f82fac74c96248b4a86609ac8c263
+      internalID: -1596093131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sharp shop assets 4_7
+      rect:
+        serializedVersion: 2
+        x: 878
+        y: 1122
+        width: 598
+        height: 534
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0779ebb153326df4c983cbbd2c9d66a1
+      internalID: 113073787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sharp shop assets 4_9
+      rect:
+        serializedVersion: 2
+        x: 1845
+        y: 1094
+        width: 462
+        height: 459
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c4afacd955080848a75edd7b886ab6a
+      internalID: 1952607590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sharp shop assets 4_10
+      rect:
+        serializedVersion: 2
+        x: 2537
+        y: 1515
+        width: 529
+        height: 502
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44df47cdc7d203f44ba105b69a6676f0
+      internalID: -1401462651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sharp shop assets 4_11
+      rect:
+        serializedVersion: 2
+        x: 3589
+        y: 1379
+        width: 213
+        height: 443
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d129366396e66547a154a636e8a69fb
+      internalID: 1590927590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sharp shop assets 4_23
+      rect:
+        serializedVersion: 2
+        x: 3890
+        y: 808
+        width: 289
+        height: 544
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23102a556284d714bb8af656410a7232
+      internalID: -1510172977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sharp shop assets 4_24
+      rect:
+        serializedVersion: 2
+        x: 2607
+        y: 1155
+        width: 194
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65438338f9d6b234096a7e52b690a082
+      internalID: 1458221778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sharp shop assets 4_25
+      rect:
+        serializedVersion: 2
+        x: 2931
+        y: 1157
+        width: 139
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc711b2a998fc1145bb157f4ea6684d1
+      internalID: 412783125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sharp shop assets 4_26
+      rect:
+        serializedVersion: 2
+        x: 3388
+        y: 820
+        width: 249
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a339fa010d2189b4b8e2a6606cb87d84
+      internalID: 209248315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sharp shop assets 4_27
+      rect:
+        serializedVersion: 2
+        x: 1107
+        y: 575
+        width: 337
+        height: 321
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fddf5c085a6a9eb4b90b263e265d2826
+      internalID: 705088451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sharp shop assets 4_29
+      rect:
+        serializedVersion: 2
+        x: 1750
+        y: 567
+        width: 598
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afbb78b0d51065742baa2b424c5d24c8
+      internalID: 171959449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      sharp shop assets 4_14: 1954137305
+      sharp shop assets 4_6: -2094896793
+      sharp shop assets 4_4: -1003717317
+      sharp shop assets 4_16: 1842310050
+      sharp shop assets 4_0: 140966458
+      sharp shop assets 4_3: -255334455
+      sharp shop assets 4_22: 2091752374
+      sharp shop assets 4_20: 426913066
+      sharp shop assets 4_10: -1401462651
+      sharp shop assets 4_30: 2004153982
+      sharp shop assets 4_33: 2124235597
+      sharp shop assets 4_23: -1510172977
+      sharp shop assets 4_21: -1294644694
+      sharp shop assets 4_5: -1596093131
+      sharp shop assets 4_15: -225571859
+      sharp shop assets 4_28: -1882946982
+      sharp shop assets 4_18: -1550135716
+      sharp shop assets 4_29: 171959449
+      sharp shop assets 4_31: 1350833685
+      sharp shop assets 4_25: 412783125
+      sharp shop assets 4_2: 1414124952
+      sharp shop assets 4_11: 1590927590
+      sharp shop assets 4_12: 2140035165
+      sharp shop assets 4_1: 1494298243
+      sharp shop assets 4_13: 1898144481
+      sharp shop assets 4_7: 113073787
+      sharp shop assets 4_8: 844094721
+      sharp shop assets 4_27: 705088451
+      sharp shop assets 4_24: 1458221778
+      sharp shop assets 4_26: 209248315
+      sharp shop assets 4_17: -447058191
+      sharp shop assets 4_19: 620608914
+      sharp shop assets 4_9: 1952607590
+      sharp shop assets 4_32: 2014317592
+      sharp shop assets 4_34: -2028703872
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
