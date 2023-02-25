@@ -209,6 +209,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9160135903365867164, guid: baec7c2da6cf45346a349ec1940aa4fa, type: 3}
+      propertyPath: m_Height
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9160135903365867164, guid: baec7c2da6cf45346a349ec1940aa4fa, type: 3}
+      propertyPath: m_Radius
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9160135903365867164, guid: baec7c2da6cf45346a349ec1940aa4fa, type: 3}
+      propertyPath: m_BaseOffset
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9160135903365867164, guid: baec7c2da6cf45346a349ec1940aa4fa, type: 3}
+      propertyPath: m_ObstacleAvoidanceType
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: baec7c2da6cf45346a349ec1940aa4fa, type: 3}
 --- !u!4 &576175723667452411 stripped
@@ -294,6 +310,22 @@ MonoBehaviour:
   dialogTextBoxSpawner: {fileID: 7018393225720340130}
   playerDialogFail: {fileID: 11400000, guid: c7c9f09ae8517f744ba65c3578b9f185, type: 2}
   playerDialogSuccess: {fileID: 11400000, guid: 76b5c7cb774cbfd40a9e8bb568824d05, type: 2}
+--- !u!58 &6687390533995468174
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3461654970007969460}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.12, y: 0.27}
+  serializedVersion: 2
+  m_Radius: 0.6
 --- !u!114 &7179008039337428076 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 367965406705248453, guid: baec7c2da6cf45346a349ec1940aa4fa, type: 3}

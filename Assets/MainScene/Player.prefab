@@ -106,6 +106,7 @@ GameObject:
   - component: {fileID: 2506424413875829323}
   - component: {fileID: 3117767492773794205}
   - component: {fileID: 3117767492773794204}
+  - component: {fileID: 1438106484496741923}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -243,11 +244,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85111aca89e0fa3439d8e26aa254f551, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 3117767492773794201}
   Movement: {fileID: 3117767492773794200}
   PlayerInteractionController: {fileID: 3117767492773794203}
   ConfidenceController: {fileID: 3117767493381543561}
   PlayerDialogBox: {fileID: 3117767492706594632}
   PlayerInteractBox: {fileID: 8911326071411642319}
+  PlayerTalkingController: {fileID: 1438106484496741923}
 --- !u!50 &3117767492773794205
 Rigidbody2D:
   serializedVersion: 4
@@ -285,6 +288,19 @@ CircleCollider2D:
   m_Offset: {x: 0.26, y: 0.38}
   serializedVersion: 2
   m_Radius: 0.7684653
+--- !u!114 &1438106484496741923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3117767492773794202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c735883de5e6aca48b1fcca0603b25f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  talkingLenghtSeconds: 1.5
 --- !u!1 &3117767493381543563
 GameObject:
   m_ObjectHideFlags: 0

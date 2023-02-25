@@ -36,6 +36,7 @@ public class Mirror_Interaction : Interaction
         //inCooldown = true;
 
         ShowDialog();
+        PlayerController.Instance.PlayerTalkingController.Talk();
 
         return InteractionResult.Success;
 
