@@ -53,6 +53,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8267797205686613220, guid: baec7c2da6cf45346a349ec1940aa4fa, type: 3}
+      propertyPath: m_Size.x
+      value: 3.3007011
+      objectReference: {fileID: 0}
+    - target: {fileID: -8267797205686613220, guid: baec7c2da6cf45346a349ec1940aa4fa, type: 3}
+      propertyPath: m_Size.y
+      value: 5.15
+      objectReference: {fileID: 0}
+    - target: {fileID: -8267797205686613220, guid: baec7c2da6cf45346a349ec1940aa4fa, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -317673380, guid: 44af38cd493f1d84cbcdd47a604c563e, type: 3}
+    - target: {fileID: -8267797205686613220, guid: baec7c2da6cf45346a349ec1940aa4fa, type: 3}
       propertyPath: m_SortingOrder
       value: 0
       objectReference: {fileID: 0}
@@ -60,6 +72,14 @@ PrefabInstance:
       propertyPath: m_SpriteSortPoint
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -8267797205686613220, guid: baec7c2da6cf45346a349ec1940aa4fa, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8267797205686613220, guid: baec7c2da6cf45346a349ec1940aa4fa, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7765de525e7025447894aeb137fbb904, type: 2}
     - target: {fileID: -5616819558663568873, guid: baec7c2da6cf45346a349ec1940aa4fa, type: 3}
       propertyPath: _serializedBlackboard
       value: '{"_variables":{"idleTime":{"_name":"idleTime","_id":"41067abe-8b22-4fe4-9759-918833751a45","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
@@ -210,6 +230,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _patienceController: {fileID: 5047616909973390434}
   _queueWaitingTime: 13
+--- !u!114 &8673780777141817320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1559949483491712698}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fb5cf9389c56d045908e175a2babed4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: {r: 1, g: 0.97829914, b: 0, a: 1}
+  outlineSize: 3
 --- !u!4 &2473239067790111221 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7009095894247873874, guid: baec7c2da6cf45346a349ec1940aa4fa, type: 3}

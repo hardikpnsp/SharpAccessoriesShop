@@ -39,12 +39,20 @@ public class BuyingItemsInteraction : Interaction
     protected override void OnPlayerEnterZone()
     {
         if(!QueueController.Empty)
+        {
             interactTextBoxSpawner.SpawnTextBox();
+            QueueController.GetFirstCustomer().GetComponent<SpriteOutliner>().enabled = true;
+        }
+
     }
 
     protected override void OnPlayerExitZone()
     {
-            interactTextBoxSpawner.RemoveTextBox();
+        interactTextBoxSpawner.RemoveTextBox();
+        if (QueueController.Instance != null && !QueueController.Instance.Empty)
+        {
+            QueueController.Instance.GetFirstCustomer().GetComponent<SpriteOutliner>().enabled = false;
+        }
     }
 
     protected override InteractionResult Interact()

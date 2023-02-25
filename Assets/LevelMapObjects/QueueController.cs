@@ -75,6 +75,11 @@ public class QueueController : MonoBehaviour
 
     }
 
+    public Customer GetFirstCustomer()
+    {
+        return customers[0];
+    }
+
     public static bool CanJoinQueue()
     {
         return Instance != null ? Instance.customers.Count < Instance.queuePositions.Length : false;
@@ -112,7 +117,6 @@ public class QueueController : MonoBehaviour
         if (Instance.customers.Contains(customer))
         {
             int index = Instance.customers.IndexOf(customer);
-
             if(index == 0)
             {
                 customer.ReachedDestination -= Instance.Customer_ReachedDestination;
@@ -124,11 +128,14 @@ public class QueueController : MonoBehaviour
                 }
             }
 
-            
-            
             Instance.customers.Remove(customer);
+            customer.GetComponent<SpriteOutliner>().enabled = false;
 
             Instance.MoveCustomers();
+            if (!Instance.Empty)
+            {
+                Instance.GetFirstCustomer().GetComponent<SpriteOutliner>().enabled = true;
+            }
             Instance.CustomerExit.Invoke();
         }
 
