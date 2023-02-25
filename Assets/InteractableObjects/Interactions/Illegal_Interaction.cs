@@ -34,7 +34,9 @@ public class Illegal_Interaction : Interaction
 
     protected override InteractionResult Interact()
     {
-        if(ConfidenceController.Confidence < confidenceNeeded)
+        PlayerController.Instance.PlayerTalkingController.Talk();
+
+        if (ConfidenceController.Confidence < confidenceNeeded)
         {
             dialogTextBoxSpawner.SpawnAndGetTextBox().SetUp(null, playerDialogFail.GetRandom());
             return InteractionResult.Fail;

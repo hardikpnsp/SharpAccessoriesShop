@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
 {
     public static PlayerController Instance;
 
+    public Animator animator;
+
     public Movement Movement;
 
     public PlayerInteractionController PlayerInteractionController;
@@ -16,6 +18,8 @@ public class PlayerController : MonoBehaviour
     public TextBoxSpawner PlayerDialogBox;
 
     public TextBoxSpawner PlayerInteractBox;
+
+    public PlayerTalkingController PlayerTalkingController;
 
     private void Awake()
     {
@@ -34,6 +38,25 @@ public class PlayerController : MonoBehaviour
         if (Instance == this)
         {
             Instance = null;
+        }
+    }
+
+    public void SetPlayerInput(bool isEnable)
+    {
+        if(Instance == null)
+        {
+            return;
+        }
+
+        Instance.Movement.enabled = isEnable;
+        Instance.PlayerInteractionController.enabled = isEnable;
+    }
+
+    public void SetAnimationParam_Bool(string name, bool value)
+    {
+        if(Instance != null)
+        {
+            Instance.animator.SetBool(name, value);
         }
     }
 }

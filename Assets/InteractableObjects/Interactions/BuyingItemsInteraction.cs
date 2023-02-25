@@ -52,8 +52,10 @@ public class BuyingItemsInteraction : Interaction
         playerDialog.SpawnAndGetTextBox().SetUp(null, playerDialogSuccess.GetRandom());
         ConfidenceController.IncreaseConfidence((uint)confidenceIncreace);
 
-       // TimerController.CreateTimer(cooldownTime, OnTimerEnd);
+        // TimerController.CreateTimer(cooldownTime, OnTimerEnd);
         //inCooldown = true;
+
+        PlayerController.Instance.PlayerTalkingController.Talk();
 
         return InteractionResult.Success;
     }
