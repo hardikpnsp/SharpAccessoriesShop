@@ -15,6 +15,7 @@ public class Customer : MonoBehaviour
     private CustomerMovement _movement;
     private Transform _spawnPoint;
     private Transform _destination;
+    private WeaponStand _stand;
 
     protected PatienceController PatienceController => _patienceController;
 
@@ -31,13 +32,18 @@ public class Customer : MonoBehaviour
 
     public Transform ChooseStand()
     {
-        WeaponStand stand = LevelMapController.GetRandomWeaponStand();
+        _stand = LevelMapController.GetRandomWeaponStand();
 
-        if (stand == null)
+        if (_stand == null)
             return null;
 
-        bool positionFound = stand.TryTakeRandomPosition(out Transform position);
+        bool positionFound = _stand.TryTakeRandomPosition(out Transform position);
         return positionFound ? position : null;
+    }
+
+    public void ReturnPosition(Transform position)
+    {
+        _stand.ReturnPosition(position);
     }
 
     public void Spawn(Transform position)

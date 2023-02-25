@@ -67,7 +67,7 @@ public class QueueController : MonoBehaviour
             {
                 if (CanJoinQueue())
                 {
-                    return Instance.queuePositions[Instance.customers.Count + 1];
+                    return Instance.queuePositions[Instance.customers.Count];
                 }
             }
         }
