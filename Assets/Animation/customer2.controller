@@ -37,10 +37,10 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: -3223319793911185743}
-    m_Position: {x: 200, y: 0, z: 0}
+    m_Position: {x: 280, y: -10, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -5821783889184901637}
-    m_Position: {x: 235, y: 65, z: 0}
+    m_Position: {x: 350, y: 70, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 8430092372446109941}
     m_Position: {x: 270, y: 130, z: 0}
@@ -62,7 +62,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Customer2
-  m_Speed: 1
+  m_Speed: 2
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []
@@ -74,7 +74,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 18bec52fe4aadb64bba4f43ffe840641, type: 2}
+  m_Motion: {fileID: 7400000, guid: 41772950194007a43b5772f0fc07a91c, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
