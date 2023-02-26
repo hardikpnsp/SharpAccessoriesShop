@@ -4682,13 +4682,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: CustomersSpawnPoint
       objectReference: {fileID: 0}
+    - target: {fileID: 2734402565797456680, guid: 7a3355b74be93e64b99aabca880b22f4, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2734402565797456682, guid: 7a3355b74be93e64b99aabca880b22f4, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2734402565797456682, guid: 7a3355b74be93e64b99aabca880b22f4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -26.45
+      value: -26.77
       objectReference: {fileID: 0}
     - target: {fileID: 2734402565797456682, guid: 7a3355b74be93e64b99aabca880b22f4, type: 3}
       propertyPath: m_LocalPosition.y
