@@ -266,7 +266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _patienceController: {fileID: 5047616909973390434}
-  _queueWaitingTime: 13
+  _queueWaitingTime: 15
   SpriteOutliner: {fileID: 5061611372351815154}
 --- !u!4 &2473239067790111221 stripped
 Transform:

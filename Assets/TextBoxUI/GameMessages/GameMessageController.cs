@@ -26,23 +26,28 @@ public class GameMessageController : MonoBehaviour
     private void Start()
     {
         ConfidenceController.ConfidenceChanged += ConfidenceController_ConfidenceChanged;
+        confidence = ConfidenceController.Confidence;
     }
+
+    private int confidence;
 
     private void ConfidenceController_ConfidenceChanged(int arg0)
     {
-        if(arg0 > 0)
+        if(confidence < arg0)
         {
             var text = Instantiate<TextBoxUI>(text_preafb_blue, transform);
             text.SetUp(null, OnConfidenceUp);
             return;
         }
 
-        if(arg0 < 0)
+        if(confidence > arg0)
         {
             var text = Instantiate<TextBoxUI>(text_preafb_red, transform);
             text.SetUp(null, OnConfidenceDown);
             return;
         }
+
+        confidence = arg0;
     }
 
     public static void ShowMessage_NotEnoughConfidence()
