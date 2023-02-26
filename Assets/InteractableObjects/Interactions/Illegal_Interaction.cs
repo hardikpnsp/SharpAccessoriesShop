@@ -50,12 +50,11 @@ public class Illegal_Interaction : Interaction
     protected override void OnPlayerEnterZone()
     {
         interactTextBoxSpawner.SpawnAndGetTextBox().SetUp();
-        GetComponent<SpriteOutliner>().enabled = true;
     }
 
     protected override void OnPlayerExitZone()
     {
         interactTextBoxSpawner.RemoveTextBox();
-        GetComponent<SpriteOutliner>().enabled = false;
+
     }
 }

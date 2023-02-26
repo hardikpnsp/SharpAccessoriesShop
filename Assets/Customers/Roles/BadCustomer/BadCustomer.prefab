@@ -108,7 +108,7 @@ PrefabInstance:
     - target: {fileID: -8267797205686613220, guid: baec7c2da6cf45346a349ec1940aa4fa, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -1057041362, guid: 44af38cd493f1d84cbcdd47a604c563e, type: 3}
+      objectReference: {fileID: 1255269703, guid: d443974ed11fb48449a9710a012f6303, type: 3}
     - target: {fileID: -8267797205686613220, guid: baec7c2da6cf45346a349ec1940aa4fa, type: 3}
       propertyPath: m_SortingOrder
       value: 0
@@ -121,10 +121,6 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: -8267797205686613220, guid: baec7c2da6cf45346a349ec1940aa4fa, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 7765de525e7025447894aeb137fbb904, type: 2}
     - target: {fileID: -5616819558663568873, guid: baec7c2da6cf45346a349ec1940aa4fa, type: 3}
       propertyPath: _serializedBlackboard
       value: '{"_variables":{"idleTime":{"_name":"idleTime","_id":"2924941c-2006-4e2d-aa7b-46f9bf4ffcd0","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
@@ -272,20 +268,6 @@ MonoBehaviour:
   PlayerInteract:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &4322204983326776425
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3461654970007969460}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fb5cf9389c56d045908e175a2babed4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 0.9816241, g: 1, b: 0, a: 1}
-  outlineSize: 3
 --- !u!114 &9017027847374538811
 MonoBehaviour:
   m_ObjectHideFlags: 0
