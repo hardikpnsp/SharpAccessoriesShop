@@ -76,6 +76,10 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -8267797205686613220, guid: baec7c2da6cf45346a349ec1940aa4fa, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7765de525e7025447894aeb137fbb904, type: 2}
     - target: {fileID: -5616819558663568873, guid: baec7c2da6cf45346a349ec1940aa4fa, type: 3}
       propertyPath: _serializedBlackboard
       value: '{"_variables":{"idleTime":{"_name":"idleTime","_id":"41067abe-8b22-4fe4-9759-918833751a45","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
@@ -235,6 +239,20 @@ CircleCollider2D:
   m_Offset: {x: 0.12, y: 0.27}
   serializedVersion: 2
   m_Radius: 0.6
+--- !u!114 &5061611372351815154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1559949483491712698}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fb5cf9389c56d045908e175a2babed4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: {r: 0.6933962, g: 0.9827128, b: 1, a: 0.45490196}
+  outlineSize: 4
 --- !u!114 &7244796216103679792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,6 +267,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _patienceController: {fileID: 5047616909973390434}
   _queueWaitingTime: 13
+  SpriteOutliner: {fileID: 5061611372351815154}
 --- !u!4 &2473239067790111221 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7009095894247873874, guid: baec7c2da6cf45346a349ec1940aa4fa, type: 3}

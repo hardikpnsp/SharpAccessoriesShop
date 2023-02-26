@@ -101,6 +101,18 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -113,7 +125,7 @@ TextureImporter:
         width: 339
         height: 245
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -134,7 +146,7 @@ TextureImporter:
         width: 809
         height: 355
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -154,8 +166,8 @@ TextureImporter:
         y: 1597
         width: 283
         height: 555
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.49999827, y: 0.002006352}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -171,12 +183,12 @@ TextureImporter:
       name: sharp shop assets 4_5
       rect:
         serializedVersion: 2
-        x: 331
+        x: 329
         y: 1339
         width: 453
         height: 610
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5200288, y: 0.0359355}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -192,12 +204,12 @@ TextureImporter:
       name: sharp shop assets 4_7
       rect:
         serializedVersion: 2
-        x: 878
+        x: 892
         y: 1122
         width: 598
         height: 534
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.4657109, y: 0.3860366}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -217,8 +229,8 @@ TextureImporter:
         y: 1094
         width: 462
         height: 459
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.47968507, y: 0.36490858}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -238,8 +250,8 @@ TextureImporter:
         y: 1515
         width: 529
         height: 502
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.6514955, y: 0.24757294}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -259,8 +271,8 @@ TextureImporter:
         y: 1379
         width: 213
         height: 443
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.45265275, y: 0.1494193}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -280,8 +292,8 @@ TextureImporter:
         y: 808
         width: 289
         height: 544
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.49999917, y: -0.002014721}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -297,12 +309,12 @@ TextureImporter:
       name: sharp shop assets 4_24
       rect:
         serializedVersion: 2
-        x: 2607
+        x: 2604
         y: 1155
         width: 194
         height: 159
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.4439068, y: -0.5532895}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -322,8 +334,8 @@ TextureImporter:
         y: 1157
         width: 139
         height: 144
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.4844997, y: -0.8409602}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -343,8 +355,8 @@ TextureImporter:
         y: 820
         width: 249
         height: 356
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.49999902, y: -0.017577954}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -360,12 +372,12 @@ TextureImporter:
       name: sharp shop assets 4_27
       rect:
         serializedVersion: 2
-        x: 1107
-        y: 575
+        x: 1104
+        y: 572
         width: 337
         height: 321
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.47057888, y: -0.4227104}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -381,12 +393,12 @@ TextureImporter:
       name: sharp shop assets 4_29
       rect:
         serializedVersion: 2
-        x: 1750
+        x: 1747
         y: 567
         width: 598
         height: 342
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.48365667, y: -0.4076637}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

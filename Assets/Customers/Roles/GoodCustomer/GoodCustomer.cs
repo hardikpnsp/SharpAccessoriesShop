@@ -15,6 +15,8 @@ public class GoodCustomer : Customer
 
     public bool CanJoinQueue => QueueController.CanJoinQueue();
 
+    [SerializeField] private SpriteOutliner SpriteOutliner;
+
     public Transform GetQueuePosition()
     {
         return QueueController.GetPosition(this);
@@ -61,6 +63,7 @@ public class GoodCustomer : Customer
         QueueController.Instance.CustomerExit.RemoveListener(OnQueuePositionUpdated);
         PatienceController.PatienceTimerEnded.RemoveListener(OnWaitingTimeEnded);
         QueueController.ExitQueue(this);
+        SpriteOutliner.enabled = false;
     }
 
     private void UpdateQueuePosition()
@@ -78,5 +81,6 @@ public class GoodCustomer : Customer
     {
         PatienceController.StartTimer(_queueWaitingTime);
         ReachedDestination -= OnJoinedQueue;
+        SpriteOutliner.enabled = true;
     }
 }

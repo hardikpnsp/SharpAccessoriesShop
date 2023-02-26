@@ -431,6 +431,9 @@ MonoBehaviour:
   - {fileID: -1057041362, guid: 44af38cd493f1d84cbcdd47a604c563e, type: 3}
   - {fileID: 45814318, guid: 44af38cd493f1d84cbcdd47a604c563e, type: 3}
   - {fileID: -1773175620, guid: 44af38cd493f1d84cbcdd47a604c563e, type: 3}
+  lowMood_max: 0
+  normalMood_max: 3
+  goodMood_max: 5
   Image: {fileID: 0}
 --- !u!114 &534964985
 MonoBehaviour:

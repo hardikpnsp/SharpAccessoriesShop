@@ -49,6 +49,12 @@ public class BuyingItemsInteraction : Interaction
 
     protected override InteractionResult Interact()
     {
+        if(ConfidenceController.Confidence == 0)
+        {
+            GameMessageController.ShowMessage_NotEnoughConfidence();
+            return InteractionResult.Fail;
+        }
+
         playerDialog.SpawnAndGetTextBox().SetUp(null, playerDialogSuccess.GetRandom());
         ConfidenceController.IncreaseConfidence((uint)confidenceIncreace);
 

@@ -38,7 +38,10 @@ public class Illegal_Interaction : Interaction
 
         if (ConfidenceController.Confidence < confidenceNeeded)
         {
+            GameMessageController.ShowMessage_NotEnoughConfidence();
+
             dialogTextBoxSpawner.SpawnAndGetTextBox().SetUp(null, playerDialogFail.GetRandom());
+            
             return InteractionResult.Fail;
         }
         else

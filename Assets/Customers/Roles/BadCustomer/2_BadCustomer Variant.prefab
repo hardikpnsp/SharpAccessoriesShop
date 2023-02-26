@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3055131235657722771
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -2014763525030931408, guid: c4971e240a8078647a563a510313e5c1, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 576175723667452411, guid: c4971e240a8078647a563a510313e5c1, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 576175723667452411, guid: c4971e240a8078647a563a510313e5c1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 576175723667452411, guid: c4971e240a8078647a563a510313e5c1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 576175723667452411, guid: c4971e240a8078647a563a510313e5c1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 576175723667452411, guid: c4971e240a8078647a563a510313e5c1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 576175723667452411, guid: c4971e240a8078647a563a510313e5c1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 576175723667452411, guid: c4971e240a8078647a563a510313e5c1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 576175723667452411, guid: c4971e240a8078647a563a510313e5c1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 576175723667452411, guid: c4971e240a8078647a563a510313e5c1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 576175723667452411, guid: c4971e240a8078647a563a510313e5c1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 576175723667452411, guid: c4971e240a8078647a563a510313e5c1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3461654970007969460, guid: c4971e240a8078647a563a510313e5c1, type: 3}
+      propertyPath: m_Name
+      value: 2_BadCustomer Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 7780339372271396789, guid: c4971e240a8078647a563a510313e5c1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -287986486, guid: f35272062664e5640a56dd2b724dd477, type: 3}
+    - target: {fileID: 7780339372271396789, guid: c4971e240a8078647a563a510313e5c1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7765de525e7025447894aeb137fbb904, type: 2}
+    - target: {fileID: 8931638124396602648, guid: c4971e240a8078647a563a510313e5c1, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: 723bfeae98f41e140a858ec9dd3ed10b, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c4971e240a8078647a563a510313e5c1, type: 3}
+--- !u!1 &1903973119033242919 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3461654970007969460, guid: c4971e240a8078647a563a510313e5c1, type: 3}
+  m_PrefabInstance: {fileID: 3055131235657722771}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-6137491726018289250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903973119033242919}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fb5cf9389c56d045908e175a2babed4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: {r: 1, g: 0.41037738, b: 0.41037738, a: 1}
+  outlineSize: 4

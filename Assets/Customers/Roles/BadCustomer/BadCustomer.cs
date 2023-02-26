@@ -12,6 +12,8 @@ public class BadCustomer : Customer
     [SerializeField, Min(1)] private float _badActingTime;
     [SerializeField] private InteractableObject InteractableObject;
 
+    [SerializeField] private SpriteOutliner SpriteOutliner;
+
     public event Action BadActingSucceded;
     public event Action BadActingPrevented;
 
@@ -43,6 +45,7 @@ public class BadCustomer : Customer
         _interaction.InteractionComplete.AddListener(OnInteracted);
         _interaction.enabled = true;
         _interaction.SetInteractable(InteractableObject);
+        SpriteOutliner.enabled = true;
     }
 
     private void StopActingBadly()
@@ -52,6 +55,7 @@ public class BadCustomer : Customer
         PatienceController.PatienceTimerEnded.RemoveListener(OnTimerEnded);
         _interaction.InteractionComplete.RemoveListener(OnInteracted);
         _interaction.SetInteractable(null);
+        SpriteOutliner.enabled = false;
     }
 }
 

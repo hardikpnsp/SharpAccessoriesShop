@@ -10,6 +10,10 @@ public class PortraitController : MonoBehaviour
 
     public static PortraitController Instance;
 
+    public int lowMood_max;
+    public int normalMood_max;
+    public int goodMood_max;
+
     public Image Image;
     void Start()
     {
@@ -17,12 +21,37 @@ public class PortraitController : MonoBehaviour
         {
             Instance = this;
             Image = GetComponent<Image>();
-            ChangeMood(0);
         }
         else
         {
             Destroy(this);
         }
+
+        ConfidenceController.ConfidenceChanged += ConfidenceController_ConfidenceChanged;
+        ConfidenceController_ConfidenceChanged(ConfidenceController.Confidence);
+    }
+
+    private void ConfidenceController_ConfidenceChanged(int arg0)
+    {
+        if(arg0 <= lowMood_max)
+        {
+            ChangeMood(0);
+        }
+        else
+        {
+            if (arg0 <= normalMood_max)
+            {
+                ChangeMood(1);
+            }
+            else
+            {
+                if (arg0 <= goodMood_max)
+                {
+                    ChangeMood(2);
+                }
+            }
+        }
+        
     }
 
     public void ChangeMood(int moodIndex)

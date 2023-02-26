@@ -161,7 +161,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5653867938948868027, guid: 7ef5ae923525499479d7505ae01a26c7, type: 3}
       propertyPath: m_text
-      value: Stop Them (2 confidence)
+      value: Stop Them (3 confidence)
       objectReference: {fileID: 0}
     - target: {fileID: 5653867939093070720, guid: 7ef5ae923525499479d7505ae01a26c7, type: 3}
       propertyPath: m_Type

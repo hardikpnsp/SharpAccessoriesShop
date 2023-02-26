@@ -154,7 +154,8 @@ public class QueueController : MonoBehaviour
 
     private void OnPlayerInteract(Interaction.InteractionResult result)
     {
-        CustomerServed.Invoke(customers[0]);
+        if(result == Interaction.InteractionResult.Success)
+            CustomerServed.Invoke(customers[0]);
     }
 
     [System.Serializable]
