@@ -23,6 +23,14 @@ public class GameMessageController : MonoBehaviour
         }
     }
 
+    private void OnDestroy()
+    {
+        if(Instance == this)
+        {
+            Instance = null;
+        }
+    }
+
     private void Start()
     {
         ConfidenceController.ConfidenceChanged += ConfidenceController_ConfidenceChanged;
@@ -33,10 +41,12 @@ public class GameMessageController : MonoBehaviour
 
     private void ConfidenceController_ConfidenceChanged(int arg0)
     {
+
         if(confidence < arg0)
         {
             var text = Instantiate<TextBoxUI>(text_preafb_blue, transform);
             text.SetUp(null, OnConfidenceUp);
+            confidence = arg0;
             return;
         }
 
@@ -44,10 +54,11 @@ public class GameMessageController : MonoBehaviour
         {
             var text = Instantiate<TextBoxUI>(text_preafb_red, transform);
             text.SetUp(null, OnConfidenceDown);
+            confidence = arg0;
             return;
         }
 
-        confidence = arg0;
+        
     }
 
     public static void ShowMessage_NotEnoughConfidence()

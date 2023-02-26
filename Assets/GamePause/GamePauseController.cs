@@ -23,6 +23,15 @@ public class GamePauseController : MonoBehaviour
         }
     }
 
+    private void OnDestroy()
+    {
+        if(instance == this)
+        {
+            Time.timeScale = 1f;
+            instance = null;
+        }
+    }
+
     private void Start()
     {
         pauseMenu.SetActive(false);

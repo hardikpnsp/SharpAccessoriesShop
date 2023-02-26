@@ -28,8 +28,17 @@ public class ConfidenceController : MonoBehaviour
         {
             Destroy(this);
         }
-
+       
         _confidence = new Confidence(_maxConfidence, _startConfidence);
+    }
+
+    private void OnDestroy()
+    {
+        if(instance == this)
+        {
+            ConfidenceChanged = null;
+            instance = null;
+        }
     }
 
     private void OnValidate()
