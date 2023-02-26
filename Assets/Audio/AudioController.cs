@@ -10,7 +10,7 @@ public class AudioController : MonoBehaviour
     public AudioSource EffectSource;
     public AudioClip backgroundMusic;
 
-    void Start()
+    void Awake()
     {
         if (Instance == null)
         {
@@ -21,6 +21,8 @@ public class AudioController : MonoBehaviour
             MusicSource.clip = backgroundMusic;
             MusicSource.loop = true;
             PlayMusic();
+
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
