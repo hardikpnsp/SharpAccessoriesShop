@@ -287,7 +287,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _patienceController: {fileID: 7179008039337428076}
   _interaction: {fileID: 9017027847374538811}
-  _badActingTime: 18
+  _badActingTime: 21
   InteractableObject: {fileID: 108766901575601649}
   SpriteOutliner: {fileID: -2014763525030931408}
 --- !u!114 &-2014763525030931408
