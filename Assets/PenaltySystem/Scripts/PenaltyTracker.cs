@@ -11,8 +11,10 @@ public class PenaltyTracker : MonoBehaviour
 
     public int Strikes { get; private set; }
 
-    public event UnityAction GameOver;
-    public event UnityAction PlayerFined;
+    public int MaxStrikes { get { return (int)_maxStrikes; } }
+
+    public UnityEvent GameOver;
+    public UnityEvent PlayerFined;
 
     private void Start()
     {
