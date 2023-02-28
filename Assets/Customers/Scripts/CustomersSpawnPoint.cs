@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using System.Linq;
+using UnityEngine.Events;
 
 public class CustomersSpawnPoint : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class CustomersSpawnPoint : MonoBehaviour
     private const float MinSpawnDelay = 1f;
 
     public event Action<Customer> SpawnedCustomer;
+    public UnityEvent Victory;
 
     private void Start()
     {
@@ -29,6 +31,12 @@ public class CustomersSpawnPoint : MonoBehaviour
             SpawnCustomer(customerStack.Pop());
             yield return waitForSeconds;
         }
+
+        while (gameObject.GetComponentsInChildren<Customer>().Length > 0) {
+            yield return waitForSeconds;
+        }
+
+        Victory.Invoke();
     }
     
     private Customer SpawnCustomer(Customer customerPrefab)
